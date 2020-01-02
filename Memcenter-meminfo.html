@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TIXINN go票亮- 粉絲安全交易演唱會、熱門活動門票之平台</title>
+    <!-- favicon co and apple-touch-icon  -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flag fonticon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.css" rel="stylesheet">
+    <!-- reset -->
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- datepicker-range CSS -->
+    <link rel="stylesheet" type="text/css" href="css/datepicker-range.css" />
+
+    <!-- Gloal CSS -->
+    <link href="css/global.css" rel="stylesheet">
+    <style type="text/css">
+    /* Global css */
+    .modal-dialog.modal-notify.modal-success .badge,
+    .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+    }
+
+    /* Page */
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+    }
+
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    input,
+    button,
+    .modal-dialog.modal-notify.modal-success .badge,
+    .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+    }
+
+    .slogan {
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+    }
+
+    .text-gray {
+        color: #585b5f;
+
+    }
+
+    /* ./Global CSS */
+
+    /* navbar */
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+        font-weight: 400;
+    }
+
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+        color: #FFF;
+        font-weight: 400;
+    }
+
+    /* dropdown-setting */
+
+    #setting.dropdown-menu {
+        padding: 0;
+    }
+
+    #setting.dropdown-menu ul {
+        padding: 12px;
+
+    }
+
+    .navbar #setting.dropdown-menu a {
+        padding: 0 10px;
+        font-size: 0.9375rem;
+        font-weight: 300;
+    }
+
+    #setting .dropdown-item a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    #setting .dropdown-item:focus,
+    #setting .dropdown-item:hover {
+        /* border-radius: 3px; */
+        background-color: transparent !important;
+        cursor: pointer;
+    }
+
+    #setting .dropdown-item {
+        display: inline-table;
+        width: 100%;
+        padding: 10px;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+    }
+
+    #setting .dropdown-item a {
+        color: #000;
+        margin-left: 4px;
+        margin-bottom: -5px;
+    }
+
+    #setting .dropdown-item a:hover {
+        background-color: #f4f4f4 !important;
+        font-weight: 300;
+        border-radius: 3px;
+    }
+
+    #setting.active,
+    #setting a.active,
+    #setting a.active:hover {
+        /*  background-color: rgba(186, 148, 236, 0.26)!important; */
+        background-color: #673ab7 !important;
+        font-weight: 300;
+        border-radius: 3px;
+    }
+
+    #setting.active,
+    #setting a.active {
+        color: #FFF;
+    }
+
+    /* ./dropdown-setting */
+
+    /* arrow-up */
+    #setting .dropdown-item:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+    }
+
+    /* ./arrow-up */
+
+    /* ./navbar */
+
+    /* ticketlist CSS */
+
+       *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #F2F3F4;
+    }
+
+   /*  .custom-select,
+    select,
+    .md-form {
+        outline: none;
+    }
+
+    .custom-select {
+        border-bottom: 1px solid #ced4da;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .table{
+        min-width: 320px;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+        overflow-x: scroll;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    .list-group-item {
+        font-size: .93rem;
+        position: relative;
+        display: block;
+        padding: .75rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border: 1px solid rgba(255, 255, 255, .325);
+    }
+
+    table,
+    td,
+    td:before {
+        font-weight: 500;
+    }
+
+    table {
+        position: relative;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #FFF;
+    }
+
+    .card.card-cascade.narrower {
+        margin-top: 1.25rem;
+    }
+
+    .card {
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+        border: 0;
+        font-weight: 400;
+    }
+
+    .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-radius: .25rem;
+    }
+
+    .card.card-cascade .view.view-cascade.gradient-card-header {
+        padding: 1.6rem 1rem;
+        text-align: center;
+    }
+
+    .card.card-cascade.narrower .view.view-cascade {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .view.view-cascade.gradient-card-header {
+        color: #fff !important;
+    }
+
+    .view {
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+    }
+
+    .card.card-cascade .view.view-cascade {
+        border-radius: .25rem;
+    }
+
+    .form-check-input[type=checkbox]:checked+label:before,
+    label.btn input[type=checkbox]:checked+label:before {
+        top: -4px;
+        left: 0;
+        width: 10px;
+        height: 1rem;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid #4285f4;
+        border-bottom: 2px solid #4285f4;
+        -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+        transform: rotate(40deg);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+    }
+
+    .form-check-input[type=checkbox]+label:before,
+    .form-check-input[type=checkbox]:not(.filled-in)+label:after,
+    label.btn input[type=checkbox]+label:before,
+    label.btn input[type=checkbox]:not(.filled-in)+label:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        z-index: 0;
+        border: 1.5px solid #aaa;
+        -webkit-border-radius: 1px;
+        border-radius: 1px;
+        margin-top: 3px;
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        transition: .2s;
+    }
+
+    .form-check-input[type=checkbox]:not(.filled-in)+label:after,
+    label.btn input[type=checkbox]:not(.filled-in)+label:after {
+        border: 0;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+    }
+
+    .form-check-input {
+        position: absolute;
+        margin-top: .3rem;
+        margin-left: -1.25rem;
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .md-form .validate {
+        margin-bottom: 1.2rem;
+    }
+
+    [type=checkbox]:checked,
+    [type=checkbox]:not(:checked) {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    table .th-lg {
+        width: 8rem !important;
+    }
+
+    #ticketlist.table thead th {
+
+        font-size: 1rem !important;
+    }
+
+    #add-ticketlist.table thead th{
+        background-color: #999;
+        color: #FFF;
+    }
+
+    .btn.disabled,
+    .btn:disabled {
+        opacity: .3;
+    }
+
+    btn.btnsele {
+        font-size: 0.93rem !important;
+        font-weight: 500 !important;
+        margin: .5rem .2rem;
+        padding: .56rem 1.04rem;
+        width: 112px;
+        color: #333;
+    }
+
+    .add-tickets span.badge:focus,
+    .add-tickets span.badge:hover {
+        background-color: rgba(255, 165, 0, 1) !important;
+        color: #FFF !important;
+        cursor: pointer;
+    }
+
+    .badge-light {
+        background-color: #dbe1e6 !important;
+        color: #4f545a !important;
+        border-radius: 30px;
+    }
+
+    .add-tickets .badge.selected {
+        background-color: #ffa500 !important;
+        color: #FFF !important;
+    }
+
+    .btn[class*="btn-outline-"].btn-sm {
+        padding-top: 0.18rem;
+        padding-bottom: 0.18rem;
+    }
+
+    .btn-round{
+      border-radius: 6rem;
+      --webkit-border-radius:6rem;
+    }
+
+    table#ticketlist td,
+    table#ticketlist td.align-middle,
+    table#sub-ticketlist td.align-middle {
+        font-size: 1rem !important;
+        font-weight: 350 !important;
+    }
+ */
+    /* md+lg screen */
+   /* @media only screen and (min-width: 767px) {
+        table#sub-ticketlist {
+                padding-left: 5%;
+                width: 100%;
+            }
+        button.btnsele {
+                width: 140px;
+            }
+
+        } */
+
+    /* sm screen */
+
+    /* @media only screen and (max-width: 760px) {
+
+        .form-check-input[type=checkbox]:checked+label:before,
+        label.btn input[type=checkbox]:checked+label:before {
+            left: 26px;
+        }
+
+        .form-check-input[type=checkbox]+label:before,
+        .form-check-input[type=checkbox]:not(.filled-in)+label:after,
+        label.btn input[type=checkbox]+label:before,
+        label.btn input[type=checkbox]:not(.filled-in)+label:after {
+            left: 26px;
+        }
+
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+
+        .table-wapper {
+            width: 99%;
+            padding-left: 0;
+            margin-left: -12px;
+        }
+
+        table#ticketlist {
+            max-width: 99%;
+        }
+
+        table#sub-ticketlist {}
+
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            margin-left: 12px;
+        }
+
+        tr:nth-child(even) {
+            background: #dee2e6a8;
+        }
+
+        td {
+            border: none !important;
+            border-bottom: 1px solid #eee !important;
+            position: relative !important;
+            padding-left: 30% !important;
+            padding-right: 0 !important;
+            padding-bottom: 0px !important;
+            padding-top: 10px !important;
+
+        }
+
+        td:before {
+            position: absolute;
+            top: 10px;
+            left: 26px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+
+        button.btnsele {
+            width: 110px;
+        } */
+
+        /* sm screen th */
+
+        /*  ticket th CSS */
+
+        /* #ticketlist td:nth-of-type(1):before {
+            content: "活動";
+        }
+
+        #ticketlist td:nth-of-type(2):before {
+            content: "場次";
+        }
+
+        #ticketlist td:nth-of-type(3):before {
+            content: "數量";
+        }
+
+        #ticketlist td:nth-of-type(4):before {
+            content: "售出數量";
+        }
+
+        #ticketlist td:nth-of-type(5):before {
+            content: "可收金額";
+        }
+
+        #ticketlist td:nth-of-type(6):before {
+            content: "總價";
+        } */
+       /*  sub-ticket th CSS */
+
+        /* #sub-ticketlist td:nth-of-type(1):before {
+            content: "面額";
+        }
+
+        #sub-ticketlist td:nth-of-type(2):before {
+            content: "時間";
+        }
+
+        #sub-ticketlist td:nth-of-type(3):before {
+            content: "座位區域";
+        }
+
+        #sub-ticketlist td:nth-of-type(4):before {
+            content: "排數";
+        }
+
+        #sub-ticketlist td:nth-of-type(5):before {
+            content: "數量";
+        }
+
+        #sub-ticketlist td:nth-of-type(6):before {
+            content: "可收金額";
+        }
+
+        #sub-ticketlist td:nth-of-type(7):before {
+            content: "總價";
+        }
+
+        #sub-ticketlist td:nth-of-type(8):before {
+            content: "功能";
+            width: 400px;
+        }
+
+        #sub-ticketlist td:nth-of-type(9):before {
+            content: "狀態";
+        }
+
+        td#sub-ticketlisttd.justify-content-start::before {
+            content: "";
+        }
+
+        td#sub-ticketlisttd.justify-content-start {
+            padding-left: 0 !important;
+        }
+
+    }
+
+
+    td#sub-ticketlisttd {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    table.table-hover tbody tr:hover {
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        background-color: rgba(255, 193, 7, 0.07);
+    }
+
+    table.table th,
+    table.table td {
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+    } */
+
+    /* collpase icon */
+
+    /* aria-expanded="false"] .sublist_icon--open {
+        display: inline;
+    }
+
+    [aria-expanded="false"] .sublist_icon--close {
+        display: none;
+    }
+
+    [aria-expanded="true"] .sublist_icon--open {
+        display: none;
+    }
+
+    [aria-expanded="true"] .sublist_icon--close {
+        display: inline;
+    } */
+
+    /* modal scrolling fix */
+
+   /*  body.modal-open {
+        position: fixed;
+        width: 100%;
+        margin-left: -15px;
+    } */
+    /* ./ticketlist CSS */
+
+
+    /* Memcenter CSS */
+    .dropdown .dropdown-menu .dropdown-item:active {
+        background-color: #f4f4f4;
+    }
+
+    .custom-select {
+        display: inline-block;
+        width: 100%;
+        height: calc(2.15rem + 2px);
+        padding: 0.175rem 1.75rem 0.175rem 0.75rem;
+        line-height: 1.5;
+        color: #495057;
+        vertical-align: middle;
+        /* background: #fff url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' v…0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E) no-repeat right 0.75rem center;
+        background-size: 8px 10px;
+        border: 1px solid #e9ecef;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; */
+    }
+
+    #mem.table thead th {
+    font-size: 1rem !important;
+}
+
+.table{
+        min-width: 320px;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+        overflow-x: scroll;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table,
+    td,
+    td:before {
+        font-weight: 500;
+    }
+
+    table {
+        position: relative;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #FFF;
+    }
+
+    /* ./Memcenter CSS */
+    </style>
+</head>
+<body>
+    <header class="sticky-top">
+        <div class="text-center white-text py-1 slogan">
+            我們是台灣最大的現場活動門票二手平台。所有門票都受到我們全面保護，由我們為其提供保障。門票的價格由賣家設定，可能低於或高於原始購買價格。
+        </div>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+            <!-- Navbar brand -->
+            <nav class="">
+                <a class="navbar-brand" href="#">
+       <img src="img/header_logo.png" height="30" alt="go票亮 logo">
+      </a>
+            </nav>
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicNav" aria-controls="basicNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- ./Collapse button -->
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicNav">
+                <!-- Links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown mr-3">
+                        <a class="nav-link white-text" data-target="#setting" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-tw white-text mr-1"> </i>NT$</a>
+                        <div class="dropdown-menu" id="setting">
+                            <ul class="">
+                                <li class="dropdown-item">
+                                    <strong class="font-weight-bold">語言：</strong>
+                                    <a href="" class="font-small active">中文</a>
+                                    <a href="" class="font-small">英文</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <strong class="font-weight-bold">地區：</strong>
+                                    <a href="" class="font-small active">台灣</a>
+                                    <a href="" class="font-small">香港</a>
+                                    <a href="" class="font-small">日本</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <strong class="font-weight-bold">貨幣：</strong>
+                                    <a href="" class="font-small active">台幣</a>
+                                    <a href="" class="font-small">人民幣</a>
+                                </li>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link" href="script:;"><i class="fa fa-ticket white-text mr-1"> </i>我要賣票</a>
+                    </li>
+                    
+
+
+                    <li class="nav-item dropdown mr-3">
+                          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false"><i class="fa fa-user white-text mr-1"> </i>會員專區</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#navbar-example2-one">會員資訊</a>
+                            <a class="dropdown-item" href="#navbar-example2-two">帳戶資訊</a>
+                            <a class="dropdown-item" href="#navbar-example2-two">訂單資訊</a>
+      <!--                       <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#navbar-example2-three">three</a> -->
+                          </div>
+                        </li>
+
+
+                    <!-- <li class="nav-item mr-3">
+                        <a href="script:;" class="nav-link"><i class="fa fa-user white-text mr-1"> </i>會員專區</a>
+                    </li> -->
+                    <li class="nav-item mr-3">
+                        <a class="nav-link" href="script:;"><i class="fa fa-question-circle white-text mr-1"> </i>問答集</a>
+                    </li>
+                </ul>
+                <!-- ./Links -->
+            </div>
+            <!-- Collapsible content -->
+        </nav>
+        <!--/.Navbar-->
+    </header>
+    <!--Main Navigation-->
+    <!-- page container -->
+    <div class="py-4">
+        <!-- page row -->
+        <div class="row container-fluid justify-content-center m-auto">
+            <!-- ticket list -->
+            <!-- Table with panel -->
+            <div class="card card-cascade narrower">
+  
+                <!-- Search Area -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                               
+                                <!-- content table -->
+                                <!-- date picker -->
+                                <div id="sandbox-container" class="justify-content-center container m-auto d-flex arrow mb-3">
+                                <!--Grid column-->
+                                    <div class="input-daterange row d-flex" id="datepicker">
+                                        <div class="col-sm col-md mt-2">
+                                            <label>活動</label>
+                                            <select class="custom-select d-block w-100" id="" required>
+                                              <option value="">請選場次...</option>
+                                              <option>5/12 台北小巨蛋</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm col-md mt-2">
+                                            <label>場次</label>
+                                            <select class="custom-select d-block w-100" id="" required>
+                                              <option value="">請選活動...</option>
+                                          <option>劉德華演場會</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm mt-2">
+                                            <label>日期 (起)</label>
+                                            <input type="text" class="input-small" name="start" />
+                                        </div>
+                                        <hr class="">
+                                        <div class="col-sm mt-2">
+                                            <label>日期 (迄)</label>
+                                            <input type="text" class="input-small" name="end" />
+                                        </div>
+                                        <div class="col-sm-4 mt-3 d-block mh-100">
+                                            <button type="button" class="btn btn-primary mt-3"><i class="fa fa-search mr-1"></i>查詢</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end test date picker -->
+                                 <!--  content table -->
+                                <!-- content table -->
+                                <div class="table table-responsive mem mt-2">
+                                    <table id="zero_config" class="table table-hover table-striped nowrap">
+                                        <thead class="deep-purple lighten-5">
+                                            <tr>
+                                                <th scope="col">訂單編號</th>
+                                                <th scope="col">訂單日期</th>
+                                                <th scope="col">狀態</th>
+                                                <th scope="col">活動-場次-單張面額-座位區域-排數</th>
+                                                <th scope="col">金額</th>
+                                                <th scope="col">功能</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-middle">12132432432499999</td>
+                                                <td class="align-middle"> 2019/01/20</td>
+                                                <td class="align-middle">已出貨</td>
+                                                <td class="align-middle">劉德華演唱會-5/12台北小巨蛋-NT$1200-黃區3F-Row排</td>
+                                                <td class="align-middle">200999</td>
+                                                <td class="align-middle"><button type="button" class="btn btn-secondary mt-2">明細</button></td>
+                                            </tr>
+                                             <tr>
+                                                <td>12132432432499999</td>
+                                                <td> 2019/01/20</td>
+                                                <td>已出貨</td>
+                                                <td>劉德華演唱會-5/12台北小巨蛋-NT$1200-黃區3F-Row排</td>
+                                                <td>200999</td>
+                                                <td class="align-middle"><button type="button" class="btn btn-secondary mt-2">明細</button></td>
+                                            </tr>
+                                                                                      
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end content table -->
+                </div>
+                                <!-- end content table -->
+                            </div>
+                        </div>
+                        <!-- end content table -->
+                    </div> <!-- end card-body -->
+                </div>
+
+
+
+
+
+
+
+
+
+               
+
+
+                <!-- ./Search Area -->
+
+
+    
+            </div>
+        </div>
+        <!-- table with panel -->
+    </div>
+    <!-- 新增票券 modal-->
+    <!-- Central Modal-->
+    <div class="modal fade" id="addticketModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-notify modal-success" role="document">
+            <!--Modal Content-->
+            <div class="modal-content">
+                <!-- Modal Header-->
+                <div class="modal-header">
+                    <p class="heading lead"><i class="fa fa-plus mr-1 text-white" aria-hidden="true"></i>新增票券</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body-->
+                <div class="modal-body mx-4">
+                    <!-- form -->
+                    <form>
+                        <div class="form-row">
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">活動</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">場次</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">單張面額</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">座位區域</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">排數</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">數量</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">售出</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="">總價(含服務)</label>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-2">
+                                <div class="md-form">
+                                    <label for="country" class="active">販售規則</label>
+                                    <select class="custom-select d-block w-100" id="country" required>
+                                        <option value="">成雙販售</option>
+                                        <option>不連號</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./form -->
+                        <!-- Modal Button -->
+                        <div class="text-center my-2 justify-content-center col-md-8 col-sm-10 m-auto">
+                            <button type="button" class="btn primary-gradient btn-block z-depth-1a">確認送出</button>
+                        </div>
+                        <!-- ./Modal Button -->
+                </div>
+                <!-- ./Modal Body-->
+                <!-- Modal Footer-->
+                </form>
+            </div>
+            <!--/. Modal Content-->
+        </div>
+    </div>
+    <!-- ./Central Modal-->
+    <!-- ./新增票券 modal -->
+    <!-- 複製票券  modal-->
+    <!-- Central Modal-->
+    <div class="modal fade" id="copyticketModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-notify modal-success" role="document">
+            <!--Modal Content-->
+            <div class="modal-content">
+                <!-- Modal Header-->
+                <div class="modal-header">
+                    <p class="heading lead"><i class="fa fa-clone mr-1 text-white" aria-hidden="true"></i>複製票券</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body-->
+                <div class="modal-body mx-4">
+                    <!-- form -->
+                    <form>
+                        <div class="form-row">
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="劉德華演唱會">
+                                <label data-error="wrong" data-success="right" for="">活動</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="1/20 台北小巨蛋">
+                                <label data-error="wrong" data-success="right" for="">場次</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="1200">
+                                <label data-error="wrong" data-success="right" for="">單張面額</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="黃區3">
+                                <label data-error="wrong" data-success="right" for="">座位區域</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="200排">
+                                <label data-error="wrong" data-success="right" for="">排數</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="200">
+                                <label data-error="wrong" data-success="right" for="">數量</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="999">
+                                <label data-error="wrong" data-success="right" for="">售出</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="99999">
+                                <label data-error="wrong" data-success="right" for="">總價(含服務)</label>
+                            </div>
+                            <div class="md-form mb-0 col-md-4">
+                                <input type="text" id="" class="form-control validate active" value="成雙販售">
+                                <label data-error="wrong" data-success="right" for="">販售規則</label>
+                            </div>
+                        </div>
+                        <!-- ./form -->
+                        <!-- Modal Button -->
+                        <div class="text-center my-2 justify-content-center col-md-8 col-sm-10 m-auto">
+                            <button type="button" class="btn primary-gradient btn-block z-depth-1a">確認複製</button>
+                        </div>
+                        <!-- ./Modal Button -->
+                </div>
+                <!-- ./Modal Body-->
+                <!-- Modal Footer-->
+                </form>
+            </div>
+            <!--/. Modal Content-->
+        </div>
+    </div>
+    <!-- ./Central Modal-->
+    <!-- ./複製票券 -->
+    <!-- ./ticket list -->
+    </div>
+    <!-- ./page row -->
+    </div>
+    <!-- ./page container -->
+    <!-- Footer -->
+    <footer class="page-footer font-small elegant-color-dark darken-4 white-text">
+        <div class="purple darken-2">
+            <!-- style="background-color: #21d192;" -->
+            <div class="container">
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-2 mb-md-0">
+                        <!-- <h6 class="mb-0">Get connected with us on social networks!</h6> -->
+                        <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+                            <button id="btnGroupDrop2" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">語言</button>
+                            <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop2">
+                                <a class="dropdown-item" href="#">中文</a>
+                                <a class="dropdown-item" href="#">英語</a>
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">地區</button>
+                            <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item" href="#">台灣</a>
+                                <a class="dropdown-item" href="#">香港</a>
+                                <a class="dropdown-item" href="#">日本</a>
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+                            <button id="btnGroupDrop3" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">貨幣</button>
+                            <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop3">
+                                <a class="dropdown-item" href="#">台幣</a>
+                                <a class="dropdown-item" href="#">美元</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+              <i class="fa fa-facebook white-text mr-4"> </i>
+            </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+              <i class="fa fa-google-plus white-text mr-4"> </i>
+            </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+              <i class="fa fa-instagram white-text"> </i>
+            </a>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row-->
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5 white-text">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">公司資訊</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p class="font-small">客服服務時間：週一至週五 10:00~18:00<br>適逢國定假日暫停服務</p>
+                    <p>權可易資訊股份有限公司 代表人：林敬祥 <br>
+                        地址：105 台北市松山區南京東路四段108號8F（小巨蛋捷運4號出口步行2分鐘）</p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">熱門活動</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="white-text" href="#!">劉德華演唱會</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">五月天演唱會</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">BTS演唱會</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">人氣藝人</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="white-text" href="#!">五月天</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">BTS</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">林俊傑</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">蕭敬騰</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">聯絡我們</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-comments-o mr-3"></i> Wechat：tixinn_go</p>
+                    <p>
+                        <i class="fa fa-comments-o mr-3"></i> LINE：@ged5875r</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> 專線：(02) 25771290</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> 專線：(02) 55964260</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i> 傳真：(02) 25770590</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center text-black py-3">© 2018 Copyright:
+            <a class="white-text" href=“”javascript:;> go票亮</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- ./Footer -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- modalscrollingfix script -->
+    <script type="text/javascript" src="js/modalscrollingfix.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+    <script>
+    $('#sandbox-container .input-daterange').datepicker({
+        orientation: "top auto",
+        daysOfWeekDisabled: "6"
+    });
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TIXINN go票亮- 粉絲安全交易演唱會、熱門活動門票之平台</title>
+    <!-- favicon co and apple-touch-icon  -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flag fonticon -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Gloal CSS -->
+    <link href="css/global.css" rel="stylesheet">
+
+    <style type="text/css">
+
+    /* Global css */
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+          background-color: #4E197D;
+      }
+      /* Page */
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+        input,button,
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+      }
+
+      .slogan{
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+      }
+
+    /* ./Global CSS */
+
+    /* index page CSS */
+       /* navbar */
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          font-weight: 400;
+        }
+      .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          color: #FFF;
+          font-weight: 400;
+        }
+    /* dropdown-setting */
+
+      #setting.dropdown-menu {
+          padding: 0;
+        }
+
+      #setting.dropdown-menu ul{
+          padding: 12px;
+
+        }
+      .navbar #setting.dropdown-menu a {
+          padding: 0 10px;
+          font-size: 0.9375rem;
+          font-weight: 300;
+       }
+
+      #setting .dropdown-item a:hover {
+          text-decoration: none;
+          background-color: transparent;
+        }
+      #setting .dropdown-item:focus,#setting .dropdown-item:hover{
+          /* border-radius: 3px; */
+          background-color: transparent!important;
+          cursor: pointer;
+        }
+
+       #setting .dropdown-item{
+          display: inline-table;
+          width: 100%;
+          padding: 10px;
+          clear: both;
+          font-weight: 400;
+          color: #212529;
+          text-align: inherit;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+        }
+
+       #setting .dropdown-item a{
+          color: #000;
+          margin-left: 4px;
+          margin-bottom: -5px;
+        }
+
+        #setting .dropdown-item a:hover{
+          background-color: #f4f4f4!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active,#setting a.active:hover {
+         /*  background-color: rgba(186, 148, 236, 0.26)!important; */
+          background-color: #673ab7!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active {
+           color: #FFF;
+        }
+    /* ./dropdown-setting */
+
+    /* arrow-up */
+    #setting .dropdown-item:before{
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+      }
+
+    /* ./arrow-up */
+
+    /* ./navbar */
+
+      /*  hero image banner -Searchbar  */
+      .Jumbotron{
+        background-image: url(img/herobanner.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 70%
+      }
+      .Jumbotron > .hero{
+        min-height: 370px;
+      }
+      .hero-searchbar{
+        height: 50px;
+        margin: 0;
+      }
+      .hero-searchbar:focus{
+        outline: none;
+        border: none;
+      }
+      input.hero-searchbar:focus{
+        outline: none;
+        border: none;
+      }
+
+      .rgba-black-light{
+        background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.70) 100%);
+      }
+      /*  ./hero image banner -Searchbar  */
+
+      /* tags */
+
+      .tags > .chip {
+        display: inline-table;
+        line-height: 32px;
+        padding: 0 12px;
+        font-size: 14px;
+        -webkit-border-radius: 16px;
+        border-radius: 16px;
+        background-color: #eceff1;
+        margin-right: 1rem;
+        cursor: pointer;
+        margin: 6px;
+        /* background-color: #eceff1; */
+        -webkit-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+      }
+
+      .tags > .chip .close {
+        cursor: pointer;
+        float: right;
+        font-size: 16px;
+        line-height: 32px;
+        padding-left: 8px;
+        -webkit-transition: all .1s linear;
+        -o-transition: all .1s linear;
+        transition: all .1s linear;
+       }
+
+      .tags > span{
+        font-size: 18px;
+         padding-left: 8px;
+        -webkit-transition: all .1s linear;
+        -o-transition: all .1s linear;
+        transition: all .1s linear;
+        }
+
+      /* ./tags */
+
+      /* ticket */
+
+      .view .mask,.cover.view .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+        background-color: rgba(0,0,0,0.5);
+
+       }
+
+       .concert-ticket h5{
+        font-size: 1.1rem;
+        margin: 10px 4px;
+        line-height: 1.4rem;
+        font-weight: 500;
+        min-height: 44px;
+       }
+
+       .concert-ticket p{
+        padding:4px 20px; 
+        border: 1.6px solid #ccc
+       }
+
+       .detail{
+        padding: 10px 40px;
+    }
+
+       .view,.cover.view{
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+        text-align: center;
+        width: 100%;
+       }
+
+      /* lg screen put this css after .view */
+      @media screen and (min-width: 1200px) {
+        .cover.view{
+        height:130px;
+        }
+      }
+
+      /* md screen put this css after @media screen lg .view */
+      @media screen and (min-width: 572px) and (max-width: 1199px) {
+      .cover.view{
+        height:108px;
+        }
+      }
+      /* ./ticket */
+
+    /* ./index page CSS */
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- go Beauty-->
+    <!--Main Navigation-->
+<div class="text-center white-text py-1 slogan">
+  我們是台灣最大的現場活動門票二手平台。所有門票都受到我們全面保護，由我們為其提供保障。門票的價格由賣家設定，可能低於或高於原始購買價格。
+</div>
+<header class="sticky-top">
+  <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <!-- Navbar brand -->
+  <nav class="">
+  <a class="navbar-brand" href="#">
+    <img src="img/header_logo.png" height="30" alt="go票亮 logo">
+  </a>
+</nav>
+   <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicNav" aria-controls="basicNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicNav">
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown mr-3">
+            <a class="nav-link white-text" data-target="#setting" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-tw white-text mr-1"> </i>NT$</a>
+            <div class="dropdown-menu" id="setting">
+              <ul class="">
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">語言：</strong>
+                <a href="" class="font-small active">中文</a>
+                <a href="" class="font-small">英文</a>
+              </li>
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">地區：</strong>
+                <a href="" class="font-small active">台灣</a>
+                <a href="" class="font-small">香港</a>
+                <a href="" class="font-small">日本</a>
+              </li>
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">貨幣：</strong>
+                <a href="" class="font-small active">台幣</a>
+                <a href="" class="font-small">人民幣</a>
+            </li>
+            </div>
+          </li>
+
+          <li class="nav-item mr-3">
+              <a class="nav-link" href="script:;"><i class="fa fa-ticket white-text mr-1"> </i>我要賣票</a>
+          </li>
+
+          <li class="nav-item mr-3">
+              <a href="script:;" class="nav-link"><i class="fa fa-user white-text mr-1"> </i>登入/註冊</a>
+          </li>
+          <li class="nav-item mr-3">
+              <a class="nav-link" href="script:;"><i class="fa fa-question-circle white-text mr-1"> </i>問答集</a>
+          </li>
+
+      </ul>
+      <!-- ./Links -->
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main>
+  <!-- Jumbotron -->
+<div class="card card-image Jumbotron">
+  <div class="text-white rgba-black-light py-5 px-4 hero">
+    <div class="py-5 col-md-8 m-auto">
+
+      <!-- search -->
+      <div class="row align-middle  input-group mb-3">
+        <input type="text" class="form-control mr-0 hero-searchbar" placeholder="搜尋演唱會，藝人活動..." aria-label="搜尋演唱會" aria-describedby="basic-addon2">
+        <div class="input-group-append ml-0">
+          <button class="btn primary-gradient hero-searchbar" type="button"><i class="fa fa-search fa-2x white-text mr-1"></i></button>
+        </div>
+      </div>
+      <!-- ./search -->
+
+      <!-- tags -->
+        <div class="col-md-12 mb-4 tags">
+        <span class="mr-1 mt-0 ml-0 col-md-2" style="height:32px;">最近瀏覽</span>
+         <div class="chip teal lighten-2 white-text waves-effect">
+            蕭敬騰
+            <i class="close fa fa-times"></i>
+          </div>
+          <div class="chip pink lighten-2 white-text waves-effect">
+            蔡依林
+            <i class="close fa fa-times"></i>
+          </div>
+          <div class="chip light-blue lighten-2 white-text waves-effect">
+            林俊傑
+            <i class="close fa fa-times"></i>
+          </div>
+          <div class="chip purple lighten-2 white-text waves-effect">
+            劉德華
+            <i class="close fa fa-times"></i>
+          </div>
+          <div class="chip mdb-color lighten-2 white-text waves-effect">
+            費玉清
+            <i class="close fa fa-times"></i>
+          </div>
+
+        </div>
+
+      <!-- ./tags -->
+
+    </div>
+  </div>
+</div>
+<!-- Jumbotron -->
+
+<!--Main layout-->
+<main>
+  <!--Main container title-->
+  <div class="container my-3">
+    <h3 class="text-center">
+  <svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <!-- circle -->
+      <defs>
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+              <stop stop-color="#FDB651" offset="0%"></stop>
+              <stop stop-color="#FA7F28" offset="100%"></stop>
+          </linearGradient>
+          <rect id="path-2" x="0" y="14" width="30" height="30" rx="15"></rect>
+          <filter x="-71.7%" y="-48.3%" width="243.3%" height="243.3%" filterUnits="objectBoundingBox" id="filter-3">
+              <feOffset dx="0" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+              <feMorphology radius="5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+              <feOffset dx="0" dy="7" in="shadowInner" result="shadowInner"></feOffset>
+              <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+              <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+              <feColorMatrix values="0 0 0 0 0.980392157   0 0 0 0 0.498039216   0 0 0 0 0.156862745  0 0 0 0.197350543 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+          </filter>
+      </defs>
+      <g id="HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Go票亮-index-Copy-2" transform="translate(-382.000000, -376.000000)">
+              <g id="標題1" transform="translate(394.000000, 377.000000)">
+                  <g id="Rectangle">
+                      <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                      <rect stroke="url(#linearGradient-1)" stroke-width="5" stroke-linejoin="square" x="2.5" y="11.5" width="25" height="25" rx="12.5"></rect>
+                  </g>
+              </g>
+          </g>
+      </g>
+  </svg>熱門活動</h3>
+  <!--./Main container title-->
+
+  <!--Main container-->
+<div class="container mt-2 mb-5">
+
+    <!--Grid row-->
+  <div class="row concert-ticket">
+    <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <img class="img-fluid" src="http://52.68.214.58/file_pic/20191105-095453.jpg" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>2019 張學友•經典世界巡迴 高雄演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>
+    </div>
+
+     <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <img class="img-fluid" src="https://s.itho.me/cybersec/2019/slides/covers/0319H21405X1.png" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>2019林俊傑 聖所世界巡迴 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>1688張票</p>
+    </div>
+
+     <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <img class="img-fluid" src="http://52.68.214.58/file_pic/20191105-095453.jpg" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>Mr.Children Tour 2018-19 重力與呼吸 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>  
+    </div>
+
+     <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <img class="img-fluid" src="http://52.68.214.58/file_pic/20191105-095453.jpg" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>五月天2019「人生無限公司」無限放大最終回到 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>  
+    </div>
+
+    <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <img class="img-fluid" src="http://52.68.214.58/file_pic/20191105-095453.jpg" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-t ext">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>許茹芸【綻放的綻放的綻放】巡迴 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>      
+    </div>
+
+    <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <img class="img-fluid" src="http://52.68.214.58/file_pic/20191105-095453.jpg" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>5566 一段愛與我們的故事 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>          
+    </div>
+
+    <div class="col-md-4 col-lg-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="cover view overlay">
+            <class="img-fluid" src="http://52.68.214.58/file_pic/20191105-095453.jpg" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>蕭敬騰娛樂先生世界巡迴演唱會 高雄演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>          
+    </div>
+
+
+</div>
+    <!--Grid row-->
+
+</div>
+<!--Main container-->
+
+</main>
+<!--Main layout-->
+
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color-dark darken-4 white-text">
+
+    <div class="purple darken-2"><!-- style="background-color: #21d192;" -->
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <!-- <h6 class="mb-0">Get connected with us on social networks!</h6> -->
+
+           <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+              <button id="btnGroupDrop2" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">語言</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop2">
+                <a class="dropdown-item" href="#">中文</a>
+                <a class="dropdown-item" href="#">英語</a>
+              </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+               <button id="btnGroupDrop1" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">地區</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">台灣</a>
+                <a class="dropdown-item" href="#">香港</a>
+                <a class="dropdown-item" href="#">日本</a>
+              </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+              <button id="btnGroupDrop3" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">貨幣</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop3">
+                <a class="dropdown-item" href="#">台幣</a>
+                <a class="dropdown-item" href="#">美元</a>
+              </div>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fa fa-facebook white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5 white-text">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">公司資訊</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p class="font-small">客服服務時間：週一至週五 10:00~18:00<br>適逢國定假日暫停服務</p>
+          <p>權可易資訊股份有限公司 代表人：林敬祥 <br>
+          地址：105 台北市松山區南京東路四段108號8F（小巨蛋捷運4號出口步行2分鐘）</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">熱門活動</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="white-text" href="#!">劉德華演唱會</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">五月天演唱會</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">BTS演唱會</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">人氣藝人</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="white-text" href="#!">五月天</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">BTS</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">林俊傑</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">蕭敬騰</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">聯絡我們</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fa fa-comments-o mr-3"></i> Wechat：tixinn_go</p>
+          <p>
+            <i class="fa fa-comments-o mr-3"></i> LINE：@ged5875r</p>
+          <p>
+            <i class="fa fa-phone mr-3"></i> 專線：(02) 25771290</p>
+            <p>
+            <i class="fa fa-phone mr-3"></i> 專線：(02) 55964260</p>
+          <p>
+            <i class="fa fa-print mr-3"></i> 傳真：(02) 25770590</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-black py-3">© 2018 Copyright:
+      <a class="white-text" href=“”javascript:;> go票亮</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+<!-- ./Footer -->
+
+    <!-- ./go Beauty-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

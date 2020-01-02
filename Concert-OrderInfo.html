@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TIXINN go票亮- 粉絲安全交易演唱會、熱門活動門票之平台</title>
+    <!-- favicon co and apple-touch-icon  -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flag fonticon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.css" rel="stylesheet">
+    <!-- reset -->
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- datepicker-range CSS -->
+    <link rel="stylesheet" type="text/css" href="css/datepicker-range.css" />
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Gloal CSS -->
+    <link href="css/global.css" rel="stylesheet">
+    <style type="text/css">
+    /* Global css */
+    .modal-dialog.modal-notify.modal-success .badge,
+    .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+    }
+
+    /* Page */
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+    }
+
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    input,
+    button,
+    .modal-dialog.modal-notify.modal-success .badge,
+    .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+    }
+
+    .slogan {
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+    }
+
+    .text-gray {
+        color: #585b5f;
+
+    }
+
+    /* ./Global CSS */
+
+    /* navbar */
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+        font-weight: 400;
+    }
+
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+        color: #FFF;
+        font-weight: 400;
+    }
+
+    /* dropdown-setting */
+
+    #setting.dropdown-menu {
+        padding: 0;
+    }
+
+    #setting.dropdown-menu ul {
+        padding: 12px;
+
+    }
+
+    .navbar #setting.dropdown-menu a {
+        padding: 0 10px;
+        font-size: 0.9375rem;
+        font-weight: 300;
+    }
+
+    #setting .dropdown-item a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    #setting .dropdown-item:focus,
+    #setting .dropdown-item:hover {
+        /* border-radius: 3px; */
+        background-color: transparent !important;
+        cursor: pointer;
+    }
+
+    #setting .dropdown-item {
+        display: inline-table;
+        width: 100%;
+        padding: 10px;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+    }
+
+    #setting .dropdown-item a {
+        color: #000;
+        margin-left: 4px;
+        margin-bottom: -5px;
+    }
+
+    #setting .dropdown-item a:hover {
+        background-color: #f4f4f4 !important;
+        font-weight: 300;
+        border-radius: 3px;
+    }
+
+    #setting.active,
+    #setting a.active,
+    #setting a.active:hover {
+        /*  background-color: rgba(186, 148, 236, 0.26)!important; */
+        background-color: #673ab7 !important;
+        font-weight: 300;
+        border-radius: 3px;
+    }
+
+    #setting.active,
+    #setting a.active {
+        color: #FFF !important;
+    }
+
+    /* ./dropdown-setting */
+
+    /* arrow-up */
+    #setting .dropdown-item:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+    }
+
+    /* ./arrow-up */
+
+    /* ./navbar */
+
+    /* OrderInfo CSS */
+    body {
+        background-color: #F2F3F4;
+    }
+
+    .orderblock {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .border-delivery {
+        margin: 0 0.4rem;
+        height: .1875rem;
+        width: 100%;
+        background-position-x: -975rem;
+        background-size: 7.25rem .1875rem;
+        background-image: repeating-linear-gradient(45deg, #FFC107, #FFEB3B 33px, transparent 0, transparent 41px, #9d7cd8 0, #d68ec6 74px, transparent 0, transparent 82px);
+    }
+
+    #mem.list-group-item-light.list-group-item-action:focus,
+    #mem.list-group-item-light.list-group-item-action:hover {
+        background-color: rgba(236, 236, 246, 0.28);
+        color: #000;
+        font-size: 16px;
+    }
+
+    #mem-menu .card-body {
+        background-color: #fafafa;
+        border: 1px solid #e0e0e0;
+        border-radius: .3rem;
+        --webkit-border-radius: 3rem;
+
+    }
+
+    #mem-menu h6 {
+        font-size: 1.2rem;
+    }
+
+    #mem-menu.card {
+        background: transparent;
+    }
+
+    #mem-menu li.list-group-item.list-group-item-action.list-group-item-light {
+        background-color: #fafafa;
+        text-align: center;
+
+    }
+
+    #mem-menu a.text-gray-dark {
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        color: #999;
+    }
+
+    #mem-menu a.text-gray-dark:hover {
+        color: #000;
+    }
+
+    /* arrow-up */
+    #mem.dropdown-menu.show:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 70px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+    }
+    /* ./arrow-up */
+    #mem.dropdown-menu {
+        margin-left: -20px;
+    }
+
+    .navbar .dropdown-menu a {
+        padding: 6px 10px;
+        font-size: 0.9375rem;
+        font-weight: 300;
+        color: #000;
+    }
+
+    .active {
+        color: #000 !important;
+    }
+
+    /* OrderList CSS */
+    body {
+        background-color: #F2F3F4;
+    }
+
+        h1, h2, h3, h4, h5, h6 {
+        font-weight: 350;
+    }
+
+    .custom-select {
+
+        font-size: .93rem;
+    }
+
+    .searchbar label {
+        font-size: .93rem;
+        font-weight: 400;
+    }
+
+    table .th-lg {
+        min-width: 4rem;
+    }
+
+    table .th-lg-long {
+        width: 16rem !important;
+    }
+
+    #sandbox-container {
+        background-color: transparent;
+        /*         padding: .6rem 1rem;
+ */
+        border-radius: 0;
+    }
+
+    table.table th,
+    table.table td {
+        padding-top: 1em !important;
+        padding-bottom: 1rem !important;
+        padding: 1rem 2rem !important;
+    }
+
+    table td {
+        font-size: 0.9rem;
+        font-weight: 350;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .table-striped tbody tr:hover {
+        background-color: #ffeb3b26;
+    }
+
+    .list-group-item {
+        font-size: 16px;
+        position: relative;
+        display: block;
+        padding: .75rem 1.25rem;
+        margin-bottom: -1px;
+    }
+
+    .orderblock li.list-group-item {
+        font-size: .93rem;
+        position: relative;
+        display: block;
+        padding: .75rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: transparent !important;
+        border: none;
+    }
+
+    .orderblock.grey.lighten-3 {
+        background-color: #f2f3f4 !important;
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 0 0.6rem;
+    }
+
+    #orderdetail {
+        font-size: .93rem;
+        color: #495057;
+    }
+
+    /* ./OrderInfo CSS */
+    </style>
+</head>
+<body">
+    <header class="sticky-top">
+        <div class="text-center white-text py-1 slogan">
+            我們是台灣最大的現場活動門票二手平台。所有門票都受到我們全面保護，由我們為其提供保障。門票的價格由賣家設定，可能低於或高於原始購買價格。
+        </div>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+            <!-- Navbar brand -->
+            <nav class="">
+                <a class="navbar-brand" href="#">
+       <img src="img/header_logo.png" height="30" alt="go票亮 logo">
+      </a>
+            </nav>
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicNav" aria-controls="basicNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- ./Collapse button -->
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicNav">
+                <!-- Links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown mr-3">
+                        <a class="nav-link white-text" data-target="#setting" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-tw white-text mr-1"> </i>NT$</a>
+                        <div class="dropdown-menu" id="setting">
+                            <ul class="">
+                                <li class="dropdown-item">
+                                    <strong class="font-weight-bold">語言：</strong>
+                                    <a href="" class="font-small active">中文</a>
+                                    <a href="" class="font-small">英文</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <strong class="font-weight-bold">地區：</strong>
+                                    <a href="" class="font-small active">台灣</a>
+                                    <a href="" class="font-small">香港</a>
+                                    <a href="" class="font-small">日本</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <strong class="font-weight-bold">貨幣：</strong>
+                                    <a href="" class="font-small active">台幣</a>
+                                    <a href="" class="font-small">人民幣</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link" href="script:;"><i class="fa fa-ticket white-text mr-1"> </i>我要賣票</a>
+                    </li>
+                    <li class="nav-item dropdown mr-3">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-user white-text mr-1"> </i>會員專區</a>
+                        <div id="mem" class="dropdown-menu">
+                            <a class="dropdown-item" href="Concert-MemInfo.html">會員資訊</a>
+                            <a class="dropdown-item" href="Concert-AccountInfo.html">帳戶資訊</a>
+                            <a class="dropdown-item" href="Concert-OrderList.html">訂單資訊</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">登出</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link" href="script:;"><i class="fa fa-question-circle white-text mr-1"> </i>問答集</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Collapsible content -->
+        </nav>
+        <!--/.Navbar-->
+    </header>
+    <!--Main Navigation-->
+    <!-- page container -->
+    <div class="container py-4">
+        <!-- page row -->
+        <div class="row">
+            <!--會員專區menu-->
+            <div id="mem-menu" class="col-md-3 my-2">
+                <!--Card-->
+                <div class="card z-depth-0 mb-2 d-none d-sm-block">
+                    <!--Card content-->
+                    <div class="card-body text-nowrap p-2">
+                        <h6 class="text-center p-2"><i class="fa fa-user mr-1"> </i>會員專區</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item list-group-item-action list-group-item-light"><a class="text-gray-dark" href="Concert-MemInfo.html">會員資訊</a></li>
+                            <li class="list-group-item list-group-item-action list-group-item-light"><a class="text-gray-dark" href="Concert-AccountInfo.html">帳戶資訊</a></li>
+                            <li class="list-group-item list-group-item-action list-group-item-light"><a class="text-gray-dark active" href="Concert-OrderList.html">訂單資訊</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--./-->
+            <!-- OrderInfo-->
+            <div class="col-md-9 my-0 p-0">
+                <div class="alert grey lighten-5 pb-3 mb-2 my-2 border-light">
+                    <div class="row">
+                        <!--content-->
+                        <div class="container justify-content-start">
+                            <h5 class="font-weight-normal text-black pt-2 mb-2"><i class="fa fa-circle-o amber-ic mr-1" aria-hidden="true"></i>訂單明細</h5>
+                            <hr>
+                            <!-- content-->
+                            <!--Tixinn 交易資訊-->
+                            <div class="row">
+                                <div class="col-md-12 justify-content-start">
+                                    <div id="orderdetail" class="row">
+                                        <div class="col-md-4"><h6 class="my-3 mb-4">訂單編號：9999999999999</h6>
+                                        </div>
+                                        <div class="col-md-5"><h6 class="my-3 mb-4">訂購日期：2019-05-17(五)07:30 PM</h6>
+                                        </div>
+                                        <div class="col-md-3"><h6 class="my-3 mb-4">交易狀態：已取件</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--./Tixinn 交易資訊 -->
+                            <div class="border-delivery"></div>
+                            <!--Tixinn 交易內容-->
+                            <div class="orderblock row mt-0 justify-content-start py-3 mx-0">
+                                <table class="table table-responsive w-100 align-middle grey lighten-4"">
+                                  <thead class="grey lighten-3 text-nowrap">
+                                    <tr>
+                                      <th scope="col"> </th>
+                                      <th scope="col"> 商品資訊</th>
+                                      <th scope="col"> 單價</th>
+                                      <th scope="col"> 數量</th>
+                                      <th scope="col"> 金額</th>
+                                    </tr>
+                                     </thead>
+                                    <tbody class="text-nowrap">
+                                    <tr>
+                                      <td class="align-middle">
+                                        <img class="img-fluid" src="http://placehold.it/200x120" alt=""></td>
+                                      <td class="align-middle">
+                                        <h6>林俊傑演唱會</h6>
+                                        <p>5/12台北小巨蛋<br>
+                                        2019-05-17 (五) 7:30 PM<br>
+                                        1200票價 黃3F區ROW排</p>
+                                      </td>
+                                      <td class="align-middle"> 22222</td>
+                                      <td class="align-middle ">2 </td>
+                                      <td class="align-middle"> 44444</td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="2"><p><strong>付費方式：</strong>線上刷卡</p>
+                                        <p><strong>運送資訊：</strong>台北市中山區建國北路一段90號3樓</P>
+                                      </td>
+                                      <td colspan="3" class="text-right align-bottom">
+                                        <h6><strong>運費：</strong>NT$200</h6>
+                                        <h6><strong>總計金額：</strong>NT$9999</h6>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+ 
+                            </div>
+                            <!--./Tixinn 交易內容 -->
+                            <!-- Action button -->
+                            <div class="row justify-content-center mt-2">
+                                <div class="co-lg-4 col-md-5 my-1">
+                                    <a class="btn primary-gradient btn-block text-white" href="Concert-OrderList.html">返回訂單列表</a>
+                                </div>
+                            </div>
+                            <!-- ./Action button -->
+                        </div>
+                        <!--  ./content -->
+                    </div>
+                </div>
+            </div>
+            <!-- ./OrderInfo -->
+        </div>
+        <!-- ./page row -->
+    </div>
+    <!-- ./page container -->
+    <!-- Footer -->
+    <footer class="page-footer font-small elegant-color-dark darken-4 white-text">
+        <div class="purple darken-2">
+            <!-- style="background-color: #21d192;" -->
+            <div class="container">
+                <!-- grid row-->
+                <div class="row py-4 d-flex align-items-center">
+                    <!-- grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <!-- <h6 class="mb-0">Get connected with us on social networks!</h6> -->
+                        <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+                            <button id="btnGroupDrop2" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">語言</button>
+                            <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop2">
+                                <a class="dropdown-item" href="#">中文</a>
+                                <a class="dropdown-item" href="#">英語</a>
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">地區</button>
+                            <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item" href="#">台灣</a>
+                                <a class="dropdown-item" href="#">香港</a>
+                                <a class="dropdown-item" href="#">日本</a>
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+                            <button id="btnGroupDrop3" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">貨幣</button>
+                            <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop3">
+                                <a class="dropdown-item" href="#">台幣</a>
+                                <a class="dropdown-item" href="#">美元</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- grid column -->
+                    <!-- grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                          <i class="fa fa-facebook white-text mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+                          <i class="fa fa-google-plus white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                          <i class="fa fa-instagram white-text"> </i>
+                        </a>
+                    </div>
+                    <!-- grid column -->
+                </div>
+                <!-- grid row-->
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5 white-text">
+            <!-- grid row -->
+            <div class="row mt-3">
+                <!-- grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">公司資訊</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p class="font-small">客服服務時間：週一至週五 10:00~18:00<br>適逢國定假日暫停服務</p>
+                    <p>權可易資訊股份有限公司 代表人：林敬祥 <br>
+                        地址：105 台北市松山區南京東路四段108號8F（小巨蛋捷運4號出口步行2分鐘）</p>
+                </div>
+                <!-- grid column -->
+                <!-- grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">熱門活動</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="white-text" href="#!">劉德華演唱會</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">五月天演唱會</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">BTS演唱會</a>
+                    </p>
+                </div>
+                <!-- grid column -->
+                <!-- grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">人氣藝人</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="white-text" href="#!">五月天</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">BTS</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">林俊傑</a>
+                    </p>
+                    <p>
+                        <a class="white-text" href="#!">蕭敬騰</a>
+                    </p>
+                </div>
+                <!-- grid column -->
+                <!-- grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">聯絡我們</h6>
+                    <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-comments-o mr-3"></i> Wechat：tixinn_go</p>
+                    <p>
+                        <i class="fa fa-comments-o mr-3"></i> LINE：@ged5875r</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> 專線：(02) 25771290</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> 專線：(02) 55964260</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i> 傳真：(02) 25770590</p>
+                </div>
+                <!-- grid column -->
+            </div>
+            <!-- grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center text-black py-3">© 2018 Copyright:
+            <a class="white-text" href=“”javascript:;> go票亮</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- ./Footer -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    </body>
+
+</html>

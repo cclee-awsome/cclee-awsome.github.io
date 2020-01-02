@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TIXINN go票亮- 粉絲安全交易演唱會、熱門活動門票之平台</title>
+    <!-- favicon co and apple-touch-icon  -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flag fonticon -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.css" rel="stylesheet">
+     <!-- reset -->
+     <link rel="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Gloal CSS -->
+    <link href="css/global.css" rel="stylesheet">
+
+    <style type="text/css">
+
+    /* Global css */
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+          background-color: #4E197D;
+      }
+      /* Page */
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+        input,button,
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+      }
+
+      .slogan{
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+        font-size:  small;
+      }
+      .text-gray{
+        color: #585b5f;
+
+      }
+
+      .h3, h3 {
+        font-size: 1.5rem;
+      }
+
+      small{
+        font-size: .8rem;
+      }
+
+    /* ./Global CSS */
+
+    /* navbar */
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          font-weight: 400;
+        }
+      .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          color: #FFF;
+          font-weight: 400;
+        }
+    /* dropdown-setting */
+
+      #setting.dropdown-menu {
+          padding: 0;
+        }
+
+      #setting.dropdown-menu ul{
+          padding: 12px;
+
+        }
+      .navbar #setting.dropdown-menu a {
+          padding: 0 10px;
+          font-size: 0.9375rem;
+          font-weight: 300;
+       }
+
+      #setting .dropdown-item a:hover {
+          text-decoration: none;
+          background-color: transparent;
+        }
+      #setting .dropdown-item:focus,#setting .dropdown-item:hover{
+          /* border-radius: 3px; */
+          background-color: transparent!important;
+          cursor: pointer;
+        }
+
+       #setting .dropdown-item{
+          display: inline-table;
+          width: 100%;
+          padding: 10px;
+          clear: both;
+          font-weight: 400;
+          color: #212529;
+          text-align: inherit;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+        }
+
+       #setting .dropdown-item a{
+          color: #000;
+          margin-left: 4px;
+          margin-bottom: -5px;
+        }
+
+        #setting .dropdown-item a:hover{
+          background-color: #f4f4f4!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active,#setting a.active:hover {
+         /*  background-color: rgba(186, 148, 236, 0.26)!important; */
+          background-color: #673ab7!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active {
+           color: #FFF;
+        }
+    /* ./dropdown-setting */
+
+    /* arrow-up */
+    #setting .dropdown-item:before{
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+      }
+
+    /* ./arrow-up */
+
+    /* ./navbar */
+
+    /* concert-tickets-info  */
+
+    body{
+        background-color: #F2F3F4;
+      }
+
+    .btn.disabled, .btn:disabled {
+    opacity: .3;
+    }
+    .filter span.badge{
+      font-size: 0.93rem;
+      margin: .4rem 0;
+      font-weight: 500;
+      color: #333;
+    }
+    .filter span.badge:focus,.filter span.badge:hover{
+      background-color: rgba(255, 165, 0, 1) !important;
+      color: #FFF!important;
+      cursor: pointer;
+    }
+    .badge-light {
+      background-color: #dbe1e6!important;
+      color: #4f545a !important;
+      border-radius: 30px;
+    }
+    .filter .badge.selected{
+      background-color: #ffa500 !important;
+      color: #FFF!important;
+    }
+    .btn-group > button.btn,.dropdown-item{
+    font-size: .84rem;
+    }
+
+    .ticket-info {
+      position: relative;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      background-color: #fff!important;
+      border-color: transparent;
+    }
+
+    .ticket-info:focus,.ticket-info:hover{
+      background-color: #fdfcf1!important;
+      cursor: pointer;
+      box-shadow: 2px;
+    }
+
+    .ticket-buy:focus,.ticket-buy:hover{
+      border: 1.6px solid #7a41ad !important;
+    }
+
+    .ticket-detail:focus,.ticket-detail:hover{
+      border: 1.6px solid #697ed6!important
+    }
+
+    .item-right p{
+        margin-bottom: .2rem;
+        color: #30343e;
+          font-weight: 500;
+    }
+
+    .container .item {
+      /* width: 100%; */
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 3px;
+      min-height: 120px;
+    }
+    .container .item-right, .container .item-left {
+      padding:10px;
+    }
+    .container .item-right {
+      position: relative;
+    }
+    .container .item-left .num {
+      font-size: 1.1rem;
+      color: #111;
+      font-weight: 500;
+      margin: 6px auto; 
+    }
+
+    .container .item-right {
+      padding: 0 20px;
+    } 
+    .text-orange{
+      color: #ff5722!important;
+    }
+    .text-gray-blue{
+      color: #324e94!important;
+    }
+
+    .text-gray{
+        color: #585b5f;
+
+      }
+    .section{
+      text-align: center;
+      border-right: 3px dotted #999fa2;
+    }
+
+    .section p{
+      color: #5a5d65;
+      font-weight: 500;
+      font-size: .96rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .container .item-left .section p{
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .tickets {
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      padding: 6px;
+      background: #777;
+      text-align: center;
+      vertical-align: middle!important;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      cursor: pointer!important;
+      display: flex;
+    }
+
+    .tickets span{
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .btn-detail:focus,.btn-detail:hover{
+      background-color: #5266aa!important;
+      color: #FFF!important;
+      cursor: pointer;
+    }
+
+    .btn-buy:focus,.btn-buy:hover{
+      background-color: #4E197D !important;
+      color: #FFF!important;
+      cursor: pointer;
+    }
+
+
+    /* ./concert-tickets-info */
+    </style>
+	</head>
+<body>
+<header class="sticky-top">
+  <div class="text-center white-text py-1 slogan">
+  我們是台灣最大的現場活動門票二手平台。所有門票都受到我們全面保護，由我們為其提供保障。門票的價格由賣家設定，可能低於或高於原始購買價格。
+</div>
+  <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <!-- Navbar brand -->
+  <nav class="">
+  <a class="navbar-brand" href="#">
+    <img src="img/header_logo.png" height="30" alt="go票亮 logo">
+  </a>
+</nav>
+   <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicNav" aria-controls="basicNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicNav">
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown mr-3">
+            <a class="nav-link white-text" data-target="#setting" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-tw white-text mr-1"> </i>NT$</a>
+            <div class="dropdown-menu" id="setting">
+              <ul class="">
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">語言：</strong>
+                <a href="" class="font-small active">中文</a>
+                <a href="" class="font-small">英文</a>
+              </li>
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">地區：</strong>
+                <a href="" class="font-small active">台灣</a>
+                <a href="" class="font-small">香港</a>
+                <a href="" class="font-small">日本</a>
+              </li>
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">貨幣：</strong>
+                <a href="" class="font-small active">台幣</a>
+                <a href="" class="font-small">人民幣</a>
+            </li>
+            </div>
+          </li>
+
+          <li class="nav-item mr-3">
+              <a class="nav-link" href="script:;"><i class="fa fa-ticket white-text mr-1"> </i>我要賣票</a>
+          </li>
+
+          <li class="nav-item mr-3">
+              <a href="script:;" class="nav-link"><i class="fa fa-user white-text mr-1"> </i>登入/註冊</a>
+          </li>
+          <li class="nav-item mr-3">
+              <a class="nav-link" href="script:;"><i class="fa fa-question-circle white-text mr-1"> </i>問答集</a>
+          </li>
+
+      </ul>
+      <!-- ./Links -->
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+
+</header>
+<!--Main Navigation-->
+<!-- page container -->
+<div class="container py-4">
+<!-- page row -->
+	<div class="row">
+	<div class="col-sm col-md-12 col-lg-5"">
+		<figure class="figure">
+			<img src="http://placehold.it/580x796" class="figure-img img-fluid z-depth-1" alt="">
+			 <h5 class="bg-light font-weight-normal text-black text-center p-3 mb-1">座位區域</h5>
+		</figure>
+<!--     <h5 class="font-weight-normal text-black pt-0 mb-3"><i class="fa fa-circle-o amber-ic mr-1" aria-hidden="true"></i>座位資訊
+ --><p class="text-center"><button class="btn btn-blue-grey btn-rounded btn-lg ml-4" type="button"><i class="fa fa-search-plus mr-1" aria-hidden="true"></i>放大座位圖</button></p>
+
+	</div>
+	<!-- right block -->
+		<div class="col-sm col-md-12 col-lg-7">
+			<h3 class="font-weight-normal">2019林俊傑 聖所世界巡迴 台北演唱會 門票</h3>
+			<!-- 活動資訊 -->
+			<div class="alert deep-purple lighten-5 my-3" role="alert">
+			<strong><i class="fa fa-calendar mr-1" aria-hidden="true"></i>2019-05-17&nbsp;&nbsp;1707:30 PM</strong><i class="fa fa-map-marker mr-1 ml-3" aria-hidden="true"></i>松山區南京東路四段2號 <a href="" class="deep-purple-text font-weight-normal"><small>展開地圖</small></a>
+			</div>
+			<!-- 活動資訊 -->
+
+			<!-- Filter -->
+			<div class="filter row align-content-center animated">
+			<!-- Filter content -->
+				<div class="border-0 z-depth-0 ml-2">
+					<h5 class="font-weight-normal text-black pt-2 mb-3"><i class="fa fa-circle-o amber-ic mr-1" aria-hidden="true"></i>購票資訊</h5>
+					<hr class="glyphicon-resize-horizontal">
+  				<!-- 票券面額 -->
+  				<div class="filter m-2">
+  					<span class="font-weight-bold text-muted mb-1 py-1">票券張數：</span>
+  					<span class="badge badge-light badge-pill mr-1 z-depth-0 py-2 px-3 selected">全部</span>
+  					<span class="badge badge-light badge-pill z-depth-0 text-white py-2 px-3" disabled>1張票</span>
+  					<span class="badge badge-light badge-pill z-depth-0 text-white py-2 px-3" disabled>2張票</span>
+  					<span class="badge badge-light badge-pill z-depth-0 text-white py-2 px-3" disabled>3張票</span>
+  					<span class="badge badge-light badge-pill z-depth-0 text-white py-2 px-3" disabled>4張票</span>
+  					<span class="badge badge-light badge-pill z-depth-0 text-white py-2 px-3" disabled>5+張票</span>
+  				</div>
+  				<!-- ./票券面額 -->
+  				<!-- dropdown menu -->
+  				<div class="row my-4 pl-4 justify-content-start">
+  				<!-- 面額區間 -->
+  					<div class="btn-group mr-1">
+  						<button class="btn btn-deep-purple btn-sm dropdown-toggle mb-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  						<i class="fa fa-money mr-1" aria-hidden="true"></i>面額區間
+  							</button>
+  						<div class="dropdown-menu">
+  							<a href="" class="dropdown-item">NT$999-9999</a>
+  							<a href="" class="dropdown-item">NT$999-9999</a>
+
+  						</div>
+  				</div>
+  				<!-- ./面額區間 -->
+  				<!-- 價格區間 -->
+  				<div class="btn-group mr-1">
+  					<button class="btn btn-deep-purple btn-sm dropdown-toggle mb-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  					<i class="fa fa-usd mr-1" aria-hidden="true"></i>價格區間
+  					</button>
+  					<div class="dropdown-menu">
+  						<a href="" class="dropdown-item"><input type="checkbox"/>&nbsp;價格區間1</a>
+  						<a href="" class="dropdown-item"><input type="checkbox"/>&nbsp;價格區間2</a>
+  					</div>
+  				</div>
+  				<!-- ./價格區間 -->
+  				<!-- 價格排序 -->
+  				<div class="btn-group">
+  					<button class="btn btn-deep-purple btn-sm dropdown-toggle mb-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  					<i class="fa fa-usd mr-1" aria-hidden="true"></i>價格排序
+  					</button>
+  					<div class="dropdown-menu">
+  						<a href="" class="dropdown-item">低到高<i class="fa fa-arrow-up ml-1" aria-hidden="true"></i></a>
+  						<a href="" class="dropdown-item">高到低<i class="fa fa-arrow-down ml-1" aria-hidden="true"></i></a>
+
+  					</div>
+  				</div>
+  				<!-- ./價格排序 -->
+				</div>
+				<!-- ./dropdown menu -->
+				</div>
+				<!-- ./Filter content -->
+				<hr class="glyphicon-resize-horizontal">
+				</div>
+				<!-- ./Filter -->
+				<!-- tickets-->
+        <div class="container">
+          <!-- item 01-->
+          <div class="row item ticket-info ticket-buy align-items-center z-depth-0 border-light animated fadeInUp">
+            <!-- item-left -->
+            <div class="col-4 col-lg item-left section">
+              <h6 class="num mt-1">區域：西下C | 排16</h6>
+              <p class="ticket-pice text-orange">面額：NT$9999</p>
+              <p><i class="fa fa-chevron-circle-right text-gray mr-1" aria-hidden="true"></i>你的座位連在一起</p>
+            </div> 
+            <!-- ./item-left -->
+
+            <!-- ./item-right -->
+            <div class="item-right col-6 col-lg-7">
+              <h6><span class="badge badge-light badge-pill z-depth-0 py-2 px-3">可購 : 4&nbsp;張票</span></h6>
+              <h5 class="font-weight-bold"><small class="text-gray mr-1">每張票</small><br><small class="mr-1">NT$</small><span class="text-orange">9999</span></h5>
+            </div> 
+            <!-- ./item-right -->
+            <!-- button -->
+            <div class="tickets btn-buy col-2 col-lg-2">
+            <span class="m-auto align-self-center">購買</span>
+            </div>
+             <!-- ./button -->
+          </div>
+          <!-- ./item 01-->
+
+         <!-- item 02-->
+          <div class="row item ticket-info ticket-buy align-items-center z-depth-0 border-light animated fadeInUp">
+            <!-- item-left -->
+            <div class="col-4 col-lg item-left section">
+              <h6 class="num mt-1">區域：西下C | 排16</h6>
+              <p class="ticket-pice text-orange">面額：NT$9999</p>
+              <p><i class="fa fa-chevron-circle-right text-gray mr-1" aria-hidden="true"></i>你的座位連在一起</p>
+            </div> 
+            <!-- ./item-left -->
+
+           <!-- ./item-right -->
+            <div class="item-right col-6 col-lg-7">
+              <h6><span class="badge badge-light badge-pill z-depth-0 py-2 px-3">可購 : 60&nbsp;張票</span></h6>
+              <h5 class="font-weight-bold"><small class="text-gray mr-1">每張票</small><br><small class="mr-1">NT$</small><span class="text-orange">9999</span></h5>
+            </div> 
+            <!-- ./item-right -->
+            <!-- button -->
+            <div class="tickets btn-buy col-2 col-lg-2">
+            <span class="m-auto align-self-center">購買</span>
+            </div>
+             <!-- ./button -->
+          </div>
+          <!-- ./item 02-->
+
+        </div>
+        <!-- ./tickets-->
+      <!-- 購票提醒說明 -->
+      <div class="font-weight-normal border-0 my-4 text-gray animated fadeIn">
+        <hr class="glyphicon-resize-horizontal my-3"><i class="fa fa-quote-left mr-2" aria-hidden="true"></i>台灣在地第三方票務交易平台，真人客服，100%安心
+        您可以安心在[go票亮]購買任何門票，我們是目前唯一有[驗票審核機制]的網路交易平台；所有門票寄送過程皆有網址可供你查詢狀態，讓您不用擔心在二手市場上遇上詐騙。<i class="fa fa-quote-right mr-2" aria-hidden="true"></i>
+      </div>
+      <!-- ./購票提醒說明 -->
+
+			</div>
+			<!-- ./right block -->
+
+			</div>
+		<!-- ./page row -->
+	</div>
+	<!-- ./page container -->
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color-dark darken-4 white-text">
+
+    <div class="purple darken-2"><!-- style="background-color: #21d192;" -->
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <!-- <h6 class="mb-0">Get connected with us on social networks!</h6> -->
+
+           <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+              <button id="btnGroupDrop2" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">語言</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop2">
+                <a class="dropdown-item" href="#">中文</a>
+                <a class="dropdown-item" href="#">英語</a>
+              </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+               <button id="btnGroupDrop1" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">地區</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">台灣</a>
+                <a class="dropdown-item" href="#">香港</a>
+                <a class="dropdown-item" href="#">日本</a>
+              </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+              <button id="btnGroupDrop3" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">貨幣</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop3">
+                <a class="dropdown-item" href="#">台幣</a>
+                <a class="dropdown-item" href="#">美元</a>
+              </div>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fa fa-facebook white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5 white-text">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">公司資訊</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p class="font-small">客服服務時間：週一至週五 10:00~18:00<br>適逢國定假日暫停服務</p>
+          <p>權可易資訊股份有限公司 代表人：林敬祥 <br>
+          地址：105 台北市松山區南京東路四段108號8F（小巨蛋捷運4號出口步行2分鐘）</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">熱門活動</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="white-text" href="#!">劉德華演唱會</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">五月天演唱會</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">BTS演唱會</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">人氣藝人</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="white-text" href="#!">五月天</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">BTS</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">林俊傑</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">蕭敬騰</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">聯絡我們</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fa fa-comments-o mr-3"></i> Wechat：tixinn_go</p>
+          <p>
+            <i class="fa fa-comments-o mr-3"></i> LINE：@ged5875r</p>
+          <p>
+            <i class="fa fa-phone mr-3"></i> 專線：(02) 25771290</p>
+            <p>
+            <i class="fa fa-phone mr-3"></i> 專線：(02) 55964260</p>
+          <p>
+            <i class="fa fa-print mr-3"></i> 傳真：(02) 25770590</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-black py-3">© 2018 Copyright:
+      <a class="white-text" href=“”javascript:;> go票亮</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+<!-- ./Footer -->
+
+	<!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

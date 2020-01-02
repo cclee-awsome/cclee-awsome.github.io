@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TIXINN go票亮- 粉絲安全交易演唱會、熱門活動門票之平台</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flag fonticon -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style type="text/css">
+
+    /* Global css */
+      /* Page */
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+        input,button,
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+          background-color: #4E197D;
+      }
+
+      .slogan{
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+      }
+
+  /* ./Global CSS */
+
+  /* Index CSS */
+
+    /* navbar */
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          font-weight: 400;
+        }
+      .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          color: #FFF;
+          font-weight: 400;
+        }
+
+    /* dropdown-setting */
+
+      #setting.dropdown-menu {
+          padding: 0;
+        }
+
+      #setting.dropdown-menu ul{
+          padding: 12px;
+
+        }
+      .navbar #setting.dropdown-menu a {
+          padding: 0 10px;
+          font-size: 0.9375rem;
+          font-weight: 300;
+       }
+
+      #setting .dropdown-item a:hover {
+          text-decoration: none;
+          background-color: transparent;
+        }
+      #setting .dropdown-item:focus,#setting .dropdown-item:hover{
+          /* border-radius: 3px; */
+          background-color: transparent!important;
+          cursor: pointer;
+        }
+
+       #setting .dropdown-item{
+          display: inline-table;
+          width: 100%;
+          padding: 10px;
+          clear: both;
+          font-weight: 400;
+          color: #212529;
+          text-align: inherit;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+        }
+
+       #setting .dropdown-item a{
+          color: #000;
+          margin-left: 4px;
+          margin-bottom: -5px;
+        }
+
+        #setting .dropdown-item a:hover{
+          background-color: #f4f4f4!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active,#setting a.active:hover {
+         /*  background-color: rgba(186, 148, 236, 0.26)!important; */
+          background-color: #673ab7!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active {
+           color: #FFF;
+        }
+    /* ./dropdown-setting */
+
+    /* arrow-up */
+    #setting .dropdown-item:before{
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+      }
+
+    /* ./arrow-up */
+
+    /* ./navbar */
+
+  /*  hero image banner -Searchbar  */
+        .Jumbotron{
+          background-image: url(img/herobanner.jpg);background-repeat: no-repeat;background-size: cover;background-position: center 70%
+        }
+        .Jumbotron > .hero{
+          min-height: 370px;
+        }
+        .hero-searchbar{
+          height: 50px;
+          margin: 0;
+        }
+        .hero-searchbar:focus{
+          outline: none;
+          border: none;
+        }
+        input.hero-searchbar:focus{
+            outline: none;
+            border: none;
+        }
+  /*  ./hero image banner -Searchbar  */
+
+    /* tags */
+
+        .tags > .chip {
+          display: inline-table;
+          line-height: 32px;
+          padding: 0 12px;
+          font-size: 14px;
+          -webkit-border-radius: 16px;
+          border-radius: 16px;
+          background-color: #eceff1;
+          margin-right: 1rem;
+          cursor: pointer;
+          margin: 6px;
+          /* background-color: #eceff1; */
+          -webkit-transition: all .3s linear;
+          -o-transition: all .3s linear;
+          transition: all .3s linear;
+        }
+
+        .tags > .chip .close {
+          cursor: pointer;
+          float: right;
+          font-size: 16px;
+          line-height: 32px;
+          padding-left: 8px;
+          -webkit-transition: all .1s linear;
+          -o-transition: all .1s linear;
+          transition: all .1s linear;
+        }
+
+        .tags > span{
+          font-size: 18px;
+           padding-left: 8px;
+          -webkit-transition: all .1s linear;
+          -o-transition: all .1s linear;
+          transition: all .1s linear;
+        }
+
+    /* ./tags */
+
+  /* Ticky block CSS */
+
+      .view .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+        transition: 1.35s ease-in;
+       }
+
+       .concert-ticket a h5{
+        font-size: 1.1rem;
+        margin: 10px 4px;
+        line-height: 1.6rem;
+        text-align: left!important;
+        font-weight: 400;
+       }
+  /* ./Ticky block CSS */
+
+/* ./Index CSS */
+    </style>
+
+</head>
+
+<body>
+
+    <!-- go Beauty-->
+    <!--Main Navigation-->
+<header class="sticky-top primary-color">
+    <div class="text-center white-text py-1 slogan">
+      我們是台灣最大的現場活動門票二手平台。所有門票都受到我們全面保護，由我們為其提供保障。門票的價格由賣家設定，可能低於或高於原始購買價格。
+    </div>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark container scrolling-navbar z-depth-0"> 
+     <!-- Navbar brand -->
+      <div class="">
+        <a class="navbar-brand ml-3" href="/">
+          <img src="img/header_logo.png" height="30" alt="go票亮 logo">
+        </a>
+      </div>
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicNav" aria-controls="basicNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicNav">
+        <!-- Links -->
+<!--sam begin 20190709-->
+
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item mx-md-3 flex-fill">
+                <a class="nav-link waves-effect waves-light" onclick="CategoryTickets(1)"><!--<i class="fa fa-ticket white-text mr-1"> </i>--><b>演唱會</b></a>
+              </li>
+              <li class="nav-item mx-md-3 flex-fill">
+                <a class="nav-link waves-effect waves-light" onclick="CategoryTickets(2)"><!--<i class="fa fa-ticket white-text mr-1"> </i>--><b>藝文演出</b></a>
+              </li>
+              <li class="nav-item mx-md-3 flex-fill">
+                <a class="nav-link waves-effect waves-light" onclick="CategoryTickets(3)"><!--<i class="fa fa-ticket white-text mr-1"> </i>--><b>運動賽事</b></a>
+              </li>
+
+</ul>
+  <!--sam end   20190709-->          
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link white-text waves-effect waves-light" data-target="#setting" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-tw white-text mr-1"> </i>NT$</a>
+            <div class="dropdown-menu" id="setting">
+              <ul class="">
+                <li class="dropdown-item">
+                  <strong class="font-weight-bold">語言：</strong>
+                  <a href="javascript:void(0);" class="font-small active waves-effect waves-light">中文</a>
+                  <!--<a href="" class="font-small">英文</a>-->
+                </li>
+                <li class="dropdown-item">
+                  <strong class="font-weight-bold">地區：</strong>
+                  <a href="javascript:void(0);" class="font-small active waves-effect waves-light">台灣</a>
+                  <!--<a href="" class="font-small">香港</a>-->
+                  <!--<a href="" class="font-small">日本</a>-->
+                </li>
+                <li class="dropdown-item">
+                  <strong class="font-weight-bold">貨幣：</strong>
+                  <a href="javascript:void(0);" class="font-small active waves-effect waves-light">台幣</a>
+                  <!--<a href="" class="font-small">人民幣</a>-->
+                </li>
+            </ul></div>
+          </li>
+
+          <li class="nav-item">
+            <a id="btnMemberSellTickets" class="nav-link waves-effect waves-light" onclick="return MemberSellTickets();" data-toggle="modal" data-target="#loginModalForm"><i class="fa fa-ticket white-text mr-1"> </i>我要賣票</a>
+          </li>
+
+          <li id="arealogin" class="nav-item" style="display: none;">
+            <a id="btnLogin" onclick="return MemberLogin();" class="nav-link waves-effect waves-light" data-toggle="modal" data-target="#loginModalForm"><i class="fa fa-user white-text mr-1"> </i>登入/註冊</a>
+          </li>
+          <li id="arealogout" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user white-text mr-1"> </i>會員專區
+            </a>
+            <div id="mem" class="dropdown-menu">
+              <a class="dropdown-item waves-effect waves-light" href="#">會員資訊</a>
+              <a class="dropdown-item waves-effect waves-light" href="#">帳戶資訊</a>
+              <a class="dropdown-item waves-effect waves-light" href="/OrderList">訂單資訊</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item waves-effect waves-light" href="#navbar-example2-three" onclick="return MemberLogin();">登出</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" target="_blank" href="https://medium.com/@hello_40625/%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C-340135572148"><i class="fa fa-question-circle white-text mr-1"> </i>問答集</a>
+          </li>
+
+        </ul>
+        <!-- ./Links -->
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+
+</header>
+
+
+<!-- ./Footer -->
+
+    <!-- ./go Beauty-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

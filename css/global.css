@@ -1,0 +1,39 @@
+/* Global css */
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+          background-color: #4E197D;
+      }
+      /* Page */
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .btn-rounded {
+        -webkit-border-radius: 10em;
+        border-radius: 10em;
+      }
+
+        input,button,
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+      }
+
+      .slogan{
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+      }
+
+      .text-gray{
+        color: #585b5f;
+
+      }
+    /* ./Global CSS */

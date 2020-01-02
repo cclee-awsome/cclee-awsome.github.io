@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>go票亮UI- Modal</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Gloal CSS -->
+    <link href="css/global.css" rel="stylesheet">
+    <style>
+    /* Global css */
+    .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+    background-color: #4E197D;
+    padding: 8px 20px;
+    }
+
+    /* 0102-2020 add */
+    #modalIMG.modal.show .modal-dialog.modal-dialog-center {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+    margin: 0 auto;
+    }
+
+    .btn-floating.btn-lg i {
+        font-size: 1.625rem;
+        line-height: 61.1px;
+    }
+    .btn-floating i {
+      display: inline-block;
+      width: inherit;
+      text-align: center;
+      color: #fff!important;
+    }
+    .btn-floating i {
+      font-size: 1.25rem;
+      line-height: 47px;
+     }
+
+    .btn-floating {
+      -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+      box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+      width: 47px;
+      height: 47px;
+      position: relative;
+      z-index: 1;
+      vertical-align: middle;
+      display: inline-block;
+      overflow: hidden;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      margin: 10px;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      padding: 0;
+      cursor: pointer;
+    }
+    /* ./Global CSS */
+    /*  Modal 蓋版廣告 CSS */
+ 
+    /* ./ Modal 蓋版廣告 CSS */
+    </style>
+  </head>
+  <body>
+    <!-- page buttons -->
+
+    <!-- 蓋版廣告 Modal Page Button -->
+    <div class="text-center">
+      <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#modalIMG">蓋版廣告 </a>
+    </div>
+    <!-- ./蓋版廣告 Modal Page Button -->
+
+
+    <!--========================= 蓋版廣告 Modal =========================-->
+    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog" tabindex="-1">
+      <div class="modal-dialog modal-dialog-center modal-lg" role="document">
+        <!-- <button type="button" class="btn-floating peach-gradient btn-md" data-dismiss="modal" aria-label="Close">
+          <span class="white-text font-weight-bold" style="font-size:2.2rem">&times;</span></button> -->
+
+        <div class="modal-content">
+          <div class="modal-body mb-0 p-0">
+            <img src="img/jj.jpg" alt="" style="width:100%">
+          </div>
+
+          <div class="modal-footer justify-content-center">
+            <h4 class="font-weight-bold align-text-bottom">林俊傑-世界巡迴演唱會台北站</h4>
+            <button type="button" class="btn btn-lg primary-gradient px-4 ml-4 waves-effect waves-light"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+由此購票</button>
+           <!--  <button type="button" class="btn btn-outline-primary btn-md ml-4 waves-effect waves-light" data-dismiss="modal">關閉</button> -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--========================= ./蓋版廣告 Modal =========================-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!--  <script src="js/bootstrap-datepicker.min.js"></script> -->
+  </body>
+</html>

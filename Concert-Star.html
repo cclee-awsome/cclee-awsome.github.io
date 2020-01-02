@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TIXINN go票亮- 粉絲安全交易演唱會、熱門活動門票之平台</title>
+    <!-- favicon co and apple-touch-icon  -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flag fonticon -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.css" rel="stylesheet">
+     <!-- reset -->
+     <link rel="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Gloal CSS -->
+    <link href="css/global.css" rel="stylesheet">
+    <style type="text/css">
+
+    /* Global css */
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+          background-color: #4E197D;
+      }
+      /* Page */
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+        input,button,
+      .modal-dialog.modal-notify.modal-success .badge, .modal-dialog.modal-notify.modal-success .modal-header {
+        background-color: #4E197D;
+      }
+
+      .slogan{
+        background-image: linear-gradient(0deg, #4E197D 0%, #000000 70%);
+        padding: 12px;
+      }
+      .text-gray{
+        color: #585b5f;
+
+      }
+
+    /* ./Global CSS */
+
+    /* navbar */
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          font-weight: 400;
+        }
+      .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+          color: #FFF;
+          font-weight: 400;
+        }
+    /* dropdown-setting */
+
+      #setting.dropdown-menu {
+          padding: 0;
+        }
+
+      #setting.dropdown-menu ul{
+          padding: 12px;
+
+        }
+      .navbar #setting.dropdown-menu a {
+          padding: 0 10px;
+          font-size: 0.9375rem;
+          font-weight: 300;
+       }
+
+      #setting .dropdown-item a:hover {
+          text-decoration: none;
+          background-color: transparent;
+        }
+      #setting .dropdown-item:focus,#setting .dropdown-item:hover{
+          /* border-radius: 3px; */
+          background-color: transparent!important;
+          cursor: pointer;
+        }
+
+       #setting .dropdown-item{
+          display: inline-table;
+          width: 100%;
+          padding: 10px;
+          clear: both;
+          font-weight: 400;
+          color: #212529;
+          text-align: inherit;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+        }
+
+       #setting .dropdown-item a{
+          color: #000;
+          margin-left: 4px;
+          margin-bottom: -5px;
+        }
+
+        #setting .dropdown-item a:hover{
+          background-color: #f4f4f4!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active,#setting a.active:hover {
+         /*  background-color: rgba(186, 148, 236, 0.26)!important; */
+          background-color: #673ab7!important;
+          font-weight: 300;
+          border-radius: 3px;
+        }
+        #setting.active,#setting a.active {
+           color: #FFF;
+        }
+    /* ./dropdown-setting */
+
+    /* arrow-up */
+    #setting .dropdown-item:before{
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+      }
+
+    /* ./arrow-up */
+
+    /* ./navbar */
+
+	  /* concert-Star  */
+
+	  body{
+	  		background-color: #F2F3F4;
+	  	}
+
+		.btn.disabled, .btn:disabled {
+		opacity: .3;
+		}
+		span.badge{
+			font-size: 0.93rem;
+			margin: .4rem 0;
+			font-weight: 500;
+			color: #333;
+		}
+		span.badge:focus,span.badge:hover{
+			background-color: rgba(255, 165, 0, 1) !important;
+			color: #FFF!important;
+			cursor: pointer;
+		}
+		.badge-light {
+			background-color: #dbe1e6!important;
+			color: #4f545a !important;
+			border-radius: 30px;
+		}
+		.badge.selected{
+			background-color: #ffa500 !important;
+			color: #FFF!important;
+		}
+		.btn-group > button.btn,.dropdown-item{
+		font-size: .84rem;
+		}
+
+		.ticket-info {
+			position: relative;
+			margin-bottom: .6rem;
+			border: 1px solid transparent;
+			border-radius: .25rem;
+			background-color: #fff!important;
+			border-color: transparent;
+		}
+
+		.ticket-info:focus,.ticket-info:hover{
+			background-color: #fdfcf1!important;
+			cursor: pointer;
+			box-shadow: 2px;
+		}
+
+		.ticket-buy:focus,.ticket-buy:hover{
+			border: 1.6px solid #7a41ad !important;
+		}
+
+		.ticket-detail:focus,.ticket-detail:hover{
+			border: 1.6px solid #697ed6!important
+		}
+
+		.item-right p{
+		    margin-bottom: .2rem;
+		    color: #30343e;
+	        font-weight: 500;
+		}
+
+		.container .item {
+			background: #fff;
+			overflow: hidden;
+			box-shadow: 3px;
+			min-height: 120px;
+      margin: 0 15px;
+		}
+		.container .item-right, .container .item-left {
+			padding:10px;
+		}
+		.container .item-right {
+			position: relative;
+		}
+		.container .item-left .num {
+			font-size: 1.1rem;
+			color: #111;
+			font-weight: 500;
+			margin: 6px auto; 
+		}
+
+		.container .item-right {
+			padding: 0 20px;
+		} 
+		.text-orange{
+			color: #ff5722!important;
+		}
+		.text-gray-blue{
+			color: #324e94!important;
+		}
+
+    .text-gray{
+        color: #585b5f;
+
+      }
+		.section{
+			text-align: center;
+			border-right: 3px dotted #999fa2;
+		}
+
+		.section p{
+			color: #5a5d65;
+			font-weight: 500;
+			font-size: .96rem;
+			margin-bottom: 0.1rem;
+		}
+
+		.container .item-left .section p{
+			color: #888;
+			margin-bottom: 10px;
+		}
+
+		.tickets {
+			color: #fff;
+			font-size: 1rem;
+			border: none;
+			padding: 6px;
+			background: #777;
+			text-align: center;
+			vertical-align: middle!important;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			cursor: pointer!important;
+			line-height: 110px
+		}
+
+		.tickets span{
+			line-height: 1;
+			display: inline-block;
+		}
+
+		.btn-detail:focus,.btn-detail:hover{
+			background-color: #5266aa!important;
+			color: #FFF!important;
+			cursor: pointer;
+		}
+
+		.btn-buy:focus,.btn-buy:hover{
+			background-color: #4E197D !important;
+			color: #FFF!important;
+			cursor: pointer;
+		}
+
+     .star{
+      font-weight:  400;
+      overflow-y: auto;
+      height: 280px;
+      color: #585b5f;
+      padding: 0;
+    }
+
+    .subscription{
+      border: 2px solid #e0e0e087;
+      border-radius: 4px;
+      padding: 0.3rem 1rem;
+      margin: 1.6rem 0;
+      background-color: #fafafa;
+    }
+
+    button.btn.btn-deep-purple.px-4{
+      cursor: pointer;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      height: 58px;
+      margin-top: 0;
+
+    }
+
+       /* ticket */
+
+        .view .mask {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          background-attachment: fixed;
+          background-color: rgba(0,0,0,0.5);
+
+         }
+
+         .concert-ticket h5{
+          font-size: 1.1rem;
+          margin: 10px 4px;
+          line-height: 1.4rem;
+          font-weight: 500;
+          min-height: 44px;
+         }
+
+         .concert-ticket p{
+          padding:4px 20px; 
+          border: 1.6px solid #ccc
+         }
+
+         .detail{
+          padding: 10px 40px;
+  /*         border: 1px solid #FFF;
+   */       }
+
+         .view {
+          position: relative;
+          overflow: hidden;
+          cursor: default;
+          text-align: center;
+          width: 100%;
+         }
+
+        /* ./ticket */
+
+
+    
+
+
+	  /* ./concert-Star */
+    </style>
+</head>
+<body">
+<header class="sticky-top">
+  <div class="text-center white-text py-1 slogan">
+  我們是台灣最大的現場活動門票二手平台。所有門票都受到我們全面保護，由我們為其提供保障。門票的價格由賣家設定，可能低於或高於原始購買價格。
+	</div>
+  <!--Navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+	  <!-- Navbar brand -->
+	  <nav class="">
+	  <a class="navbar-brand" href="#">
+	    <img src="img/header_logo.png" height="30" alt="go票亮 logo">
+	  </a>
+	</nav>
+   <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicNav" aria-controls="basicNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicNav">
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown mr-3">
+            <a class="nav-link white-text" data-target="#setting" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-tw white-text mr-1"> </i>NT$</a>
+            <div class="dropdown-menu" id="setting">
+              <ul class="">
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">語言：</strong>
+                <a href="" class="font-small active">中文</a>
+                <a href="" class="font-small">英文</a>
+              </li>
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">地區：</strong>
+                <a href="" class="font-small active">台灣</a>
+                <a href="" class="font-small">香港</a>
+                <a href="" class="font-small">日本</a>
+              </li>
+              <li class="dropdown-item">
+                <strong class="font-weight-bold">貨幣：</strong>
+                <a href="" class="font-small active">台幣</a>
+                <a href="" class="font-small">人民幣</a>
+            </li>
+            </div>
+          </li>
+
+          <li class="nav-item mr-3">
+              <a class="nav-link" href="script:;"><i class="fa fa-ticket white-text mr-1"> </i>我要賣票</a>
+          </li>
+
+          <li class="nav-item mr-3">
+              <a href="script:;" class="nav-link"><i class="fa fa-user white-text mr-1"> </i>登入/註冊</a>
+          </li>
+          <li class="nav-item mr-3">
+              <a class="nav-link" href="script:;"><i class="fa fa-question-circle white-text mr-1"> </i>問答集</a>
+          </li>
+
+      </ul>
+      <!-- ./Links -->
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+
+</header>
+<!--Main Navigation-->
+<!-- page container -->
+<div class="container py-4">
+<!--   <h3 class="font-weight-normal">林俊傑（Lin Jun Jie）</h3>
+    <hr class="glyphicon-resize-horizontal"> -->
+<!-- page row -->
+	<div class="card p-4">
+
+<div class="row">
+	<div class="col-sm col-md col-lg mb-2">
+			<img src="http://placehold.it/580x300" class="figure-img img-fluid rounded" alt="">
+      <!-- 訂閱 -->
+        <h5 class="font-weight-bold pt-2 ml-2"><i class="fa fa-newspaper-o mr-1" aria-hidden="true"></i>活動搶先看訂閱</h5>
+        <div class="input-group pb-2">
+          <input type="text" class="form-control" placeholder="請輸入含有@之email" style="height: 58px">
+          <button type="button" class="btn btn-deep-purple px-4">訂閱</button>
+        </div>
+      <!-- ./訂閱 -->
+      
+	</div>
+	<!-- right block -->
+	<div class="col-sm col-md col-lg">
+    <!-- 藝人簡介 -->
+      <h3 class="font-weight-normal deep-purple-text">林俊傑（Lin Jun Jie）</h3>
+    <hr class="glyphicon-resize-horizontal">
+    <div class="star">
+      <p>林俊傑（Lin Jun Jie），暱稱 JJ Lin，華語流行音樂歌手、作曲人、作詞人及音樂製作人。</p>
+
+    <p>林俊傑出生於新加坡，2004年憑《江南》一曲走紅亞洲華語音樂界，至今已創作超過百首歌曲，用於自己專輯也幫其他華語當紅歌手製作專輯。出道至今已發行11張個人專輯，舉辦過三次大型巡迴演唱會，2015年情人節當天開始起跑最新一場安可演唱會【時線:新地球-世界巡迴演唱會】，到目前為止已有將近20場次，於中國大陸及全亞洲地區巡演。</p>
+
+    <p>林俊傑的音樂風格多元，創作的歌曲在華人音樂市場具有指標性代表，代表作如「江南 River South」、「曹操Cao Cao」、「小酒窩Dimples」、「她說She Says」、「學不會Never Learn」。近期與多位不同風格的國際藝人在音樂及其他作品上也有許多合作，如:傑森瑪耶茲、CNBLUE主唱鄭容和、五月天阿信、香港小天后鄧紫棋以及Angelababy等。</p>
+
+    <p>在亞洲華語音樂成績上，JJ也是備受肯定，獲得亞洲樂壇最受矚目的金曲獎的最佳新人獎，之後二度入圍金曲獎最佳男歌手獎及入圍最佳作曲人獎，2014年憑著第十張個人專輯【因你而在】獲得第26屆金曲獎最佳國語男歌手。在中國各大音樂頒獎典禮上也獲得了最受歡迎男歌手、海外最佳創作歌手、最佳製作等獎項。</p>
+
+    <p>JJ在2006年客串演出偶像劇《花樣少年少女》，2008年擔任男主角演出偶像劇《原來我不帥》。2014客串了由林心如李東學主演的賀歲新片【大囍臨門】，在戲劇上也積極的多方發展。2007年，林俊傑成立了其個人音樂製作公司 JFJ Productions (http://www.jfj-productions.com)，讓他跟許多音樂人一起撞擊出更多令人驚豔的好作品，2014年幫陳奕迅量身訂做最新國語專輯，一致獲得各方好評。而林俊傑於2009年創立了自己的潮流品牌SMG（Still Moving Under Gunfire / http://smglife.com)，至今在海內外擁有超過5家店面。</p>
+
+    <p>JJ在華人音樂是具有代表性歌手，個人經營的相關微博突破3千萬人關注，2011年發行「學不會」專輯在中國數位下載突破1千萬次，再次證明JJ華語音樂市場的地位。2015年推出第11張全新個人專輯《新地球》。</p>
+    
+    <h5 class="font-weight-bold">唱片作品</h5>
+    <table class="table table-responsive">
+      <thead class="bg-light font-weight-bold"><tr>
+      <th align="left" width="45px"> 依序
+      </th>
+      <th align="left" width="215px">專輯資訊
+      </th>
+      <th align="left" width="125px">發行日期
+      </th>
+      <th align="left" width="125px">製作公司
+      </th>
+      <th align="left" width="125px">出版公司
+      </th>
+      </tr></tr>
+      <tbody><tr>
+      <td align="center"> 1st
+      </td>
+      <td align="left"><a href="/index.php?title=%E6%A8%82%E8%A1%8C%E8%80%85&amp;action=edit&amp;redlink=1" class="new" title="樂行者 (頁面不存在)">樂行者</a>
+      </td>
+      <td align="left">2003年4月10日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">豐華唱片
+      </td></tr>
+      <tr>
+      <td align="center"> 2nd
+      </td>
+      <td align="left"> <a href="/index.php?title=%E7%AC%AC%E4%BA%8C%E5%A4%A9%E5%A0%82&amp;action=edit&amp;redlink=1" class="new" title="第二天堂 (頁面不存在)">第二天堂</a>
+      </td>
+      <td align="left">2004年6月4日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">豐華唱片
+      </td></tr>
+      <tr>
+      <td align="center"> 3rd
+      </td>
+      <td align="left"><a href="/index.php?title=%E7%B7%A8%E8%99%9F89757&amp;action=edit&amp;redlink=1" class="new" title="編號89757 (頁面不存在)">編號89757</a>
+      </td>
+      <td align="left">2005年4月1日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">豐華唱片
+      </td></tr>
+      <tr>
+      <td align="center"> 4th
+      </td>
+      <td align="left"><a href="/index.php?title=%E6%9B%B9%E6%93%8D_(%E5%B0%88%E8%BC%AF)&amp;action=edit&amp;redlink=1" class="new" title="曹操 (專輯) (頁面不存在)">曹操</a>
+      </td>
+      <td align="left">2006年2月17日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">豐華唱片
+      </td></tr>
+      <tr>
+      <td align="center"> 5th
+      </td>
+      <td align="left"><a href="/index.php?title=%E8%A5%BF%E7%95%8C&amp;action=edit&amp;redlink=1" class="new" title="西界 (頁面不存在)">西界</a>
+      </td>
+      <td align="left">2007年6月29日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">海蝶音樂
+      </td></tr>
+      <tr>
+      <td align="center"> 6th
+      </td>
+      <td align="left"><a href="/index.php?title=JJ%E9%99%B8&amp;action=edit&amp;redlink=1" class="new" title="JJ陸 (頁面不存在)">JJ陸</a>
+      </td>
+      <td align="left">2008年10月18日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">海蝶音樂
+      </td></tr>
+      <tr>
+      <td align="center"> 7th
+      </td>
+      <td align="left"><a href="/index.php?title=100%E5%A4%A9&amp;action=edit&amp;redlink=1" class="new" title="100天 (頁面不存在)">100天</a>
+      </td>
+      <td align="left">2009年12月18日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left"><a href="/index.php?title=%E6%84%9B%E8%B2%9D%E5%85%8B%E6%80%9D&amp;action=edit&amp;redlink=1" class="new" title="愛貝克思 (頁面不存在)">愛貝克思</a>
+      </td></tr>
+      <tr>
+      <td align="center"> 8th
+      </td>
+      <td align="left"><a href="/index.php?title=%E5%A5%B9%E8%AA%AA_%E6%A6%82%E5%BF%B5%E8%87%AA%E9%81%B8%E8%BC%AF&amp;action=edit&amp;redlink=1" class="new" title="她說 概念自選輯 (頁面不存在)">她說 概念自選輯</a>
+      </td>
+      <td align="left">2010年12月8日
+      </td>
+      <td align="left">海蝶音樂
+      </td>
+      <td align="left">愛貝克思
+      </td></tr>
+      <tr>
+      <td align="center"> 9th
+      </td>
+      <td align="left"><a href="/index.php?title=%E5%AD%B8%E4%B8%8D%E6%9C%83&amp;action=edit&amp;redlink=1" class="new" title="學不會 (頁面不存在)">學不會 Lost N Found</a>
+      </td>
+      <td align="left">2011年12月31日
+      </td>
+      <td align="left">JFJ Productions
+      </td>
+      <td align="left">華納音樂
+      </td></tr>
+      <tr>
+      <td align="center"> 10th
+      </td>
+      <td align="left"><a href="/index.php?title=%E5%9B%A0%E4%BD%A0%E8%80%8C%E5%9C%A8&amp;action=edit&amp;redlink=1" class="new" title="因你而在 (頁面不存在)">因你 而在 Stories Untold</a>
+      </td>
+      <td align="left">2013年3月13日
+      </td>
+      <td align="left">JFJ Productions
+      </td>
+      <td align="left">華納音樂
+      </td></tr>
+      <tr>
+      <td align="center"> 11th
+      </td>
+      <td align="left"><a href="/index.php?title=%E6%96%B0%E5%9C%B0%E7%90%83&amp;action=edit&amp;redlink=1" class="new" title="新地球 (頁面不存在)">新地球 Genesis</a>
+      </td>
+      <td align="left">2014年12月27日
+      </td>
+      <td align="left">JFJ Productions
+      </td>
+      <td align="left">華納音樂
+      </td></tr>
+      <tr>
+      <td align="center"> 12th
+      </td>
+      <td align="left"><a href="/index.php/%E5%92%8C%E8%87%AA%E5%B7%B1%E5%B0%8D%E8%A9%B1" title="和自己對話">和自己對話 From M.E. To Myself</a>
+      </td>
+      <td align="left">2015年12月25日
+      </td>
+      <td align="left">JFJ Productions
+      </td>
+      <td align="left">華納音樂
+      </td></tr></tbody>
+    </table>
+
+    </div>
+    <!-- ./藝人簡介 -->
+</div>
+<!-- ./介紹 row -->
+    
+
+	</div>
+	<!-- ./right block -->
+ </div>
+<!-- ./page row -->
+    <!--Main container-->
+<div class="container my-5">
+  <h5 class="font-weight-normal text-black pt-2 my-3"><i class="fa fa-circle-o amber-ic mr-1" aria-hidden="true"></i>藝人所有活動</h5>
+
+    <!--Grid row-->
+  <div class="row concert-ticket">
+    <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>2019 張學友•經典世界巡迴 高雄演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>
+    </div>
+
+     <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>2019林俊傑 聖所世界巡迴 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>1688張票</p>
+    </div>
+
+     <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>Mr.Children Tour 2018-19 重力與呼吸 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>  
+    </div>
+
+     <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>五月天2019「人生無限公司」無限放大最終回到 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>  
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>許茹芸【綻放的綻放的綻放】巡迴 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>      
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>5566 一段愛與我們的故事 台北演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>          
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>2019 魔力紅 MAROON 5 RED PILL BLUES</h5></a>
+    <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>          
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4 text-center">
+            <a href="#">
+            <div class="view overlay">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <div class="mask flex-center align-middle">
+                <div class="detail white-text">
+                <p class="white-text">看詳情</div>
+            </div></a>
+        </div>
+      <div class="overlay"></div>
+      <a href="javascript:;" class="mt-4 mb-4 dark-grey-text"><h5>蕭敬騰娛樂先生世界巡迴演唱會 高雄演唱會 門票</h5></a>
+      <p><i class="fa fa-ticket purple-text mr-1"></i>9999張票</p>          
+    </div>
+
+
+</div>
+    <!--Grid row-->
+
+</div>
+<!--Main container-->
+</div>
+<!-- ./page container -->
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color-dark darken-4 white-text">
+
+    <div class="purple darken-2"><!-- style="background-color: #21d192;" -->
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <!-- <h6 class="mb-0">Get connected with us on social networks!</h6> -->
+
+           <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+              <button id="btnGroupDrop2" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">語言</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop2">
+                <a class="dropdown-item" href="#">中文</a>
+                <a class="dropdown-item" href="#">英語</a>
+              </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+               <button id="btnGroupDrop1" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">地區</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">台灣</a>
+                <a class="dropdown-item" href="#">香港</a>
+                <a class="dropdown-item" href="#">日本</a>
+              </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="dropdown-menu ">
+              <button id="btnGroupDrop3" type="button" class="btn btn-purple btn-sm dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">貨幣</button>
+              <div class="dropdown-menu btn btn-secondary btn-sm" aria-labelledby="btnGroupDrop3">
+                <a class="dropdown-item" href="#">台幣</a>
+                <a class="dropdown-item" href="#">美元</a>
+              </div>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fa fa-facebook white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5 white-text">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">公司資訊</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p class="font-small">客服服務時間：週一至週五 10:00~18:00<br>適逢國定假日暫停服務</p>
+          <p>權可易資訊股份有限公司 代表人：林敬祥 <br>
+          地址：105 台北市松山區南京東路四段108號8F（小巨蛋捷運4號出口步行2分鐘）</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">熱門活動</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="white-text" href="#!">劉德華演唱會</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">五月天演唱會</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">BTS演唱會</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">人氣藝人</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="white-text" href="#!">五月天</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">BTS</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">林俊傑</a>
+          </p>
+          <p>
+            <a class="white-text" href="#!">蕭敬騰</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">聯絡我們</h6>
+          <hr class="purple lighten-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fa fa-comments-o mr-3"></i> Wechat：tixinn_go</p>
+          <p>
+            <i class="fa fa-comments-o mr-3"></i> LINE：@ged5875r</p>
+          <p>
+            <i class="fa fa-phone mr-3"></i> 專線：(02) 25771290</p>
+            <p>
+            <i class="fa fa-phone mr-3"></i> 專線：(02) 55964260</p>
+          <p>
+            <i class="fa fa-print mr-3"></i> 傳真：(02) 25770590</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-black py-3">© 2018 Copyright:
+      <a class="white-text" href=“”javascript:;> go票亮</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+<!-- ./Footer -->
+
+	<!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
