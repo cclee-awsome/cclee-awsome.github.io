@@ -611,13 +611,20 @@
             content: "售出數量";
         }
 
-        #ticketlist td:nth-of-type(5):before {
+         #ticketlist td:nth-of-type(5):before {
             content: "可收金額";
         }
+         #ticketlist td:nth-of-type(6):before {
+            content: "已收金額";
+        }
+         #ticketlist td:nth-of-type(7):before {
+            content: "未收金額";
+        }
 
-        #ticketlist td:nth-of-type(6):before {
+        #ticketlist td:nth-of-type(8):before {
             content: "總價";
         }
+        
        /*  sub-ticket th CSS */
 
         #sub-ticketlist td:nth-of-type(1):before {
@@ -937,8 +944,6 @@
     }
 
     button#btnGroupFiliter1,button#btnGroupFiliter2,button#btnGroupAdd {
-    min-height: 46px;
-    height: 46px;
     padding: 2px 12px!important;
     margin-top: 6px;
     margin-bottom: 6px;
@@ -946,27 +951,90 @@
    }
 
     button#btnGroupAdd  {
-    width: 50px;
+    width: 50px!important;
    }
    button#btnGroupFiliter1,button#btnGroupFiliter2  {
     min-width: 20px;
     width: 166px;
    }
-   button#btnroupFiliter1.w-46,button#btnroupFiliter2.w-46,button#btnroupFiliterAdd.w-46{
-    min-width: 20px;
-    width: 160px;
+   button#btnGroupFiliter1.h-46,button#btnGroupFiliter2.h-46,button#btnGroupAdd.h-46 {
+    min-height: 46px;
+    height: 46px;
    }
    @media only screen and (max-width: 760px) {
-    button#btnGroupFiliter1,button#btnGroupFiliter2,button#btnGroupAdd {
+    button#btnGroupFiliter1.h-46,button#btnGroupFiliter2.h-46,button#btnGroupAdd.h-46 {
     min-height: 46px;
-    height: 24px;
+    height: 46px;
    }
-    button#btnGroupFiliter1.w-46,button#btnGroupFiliter2.w-46,button#btnGroupAdd.w-46{
+    button#btnGroupFiliter1,button#btnGroupFiliter2{
     min-width: 20px;
     width: 126px;
     }
    }
+/*search box css start here*/
+.search-sec{
+    width: 100%
+}
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(2.6rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+    height: calc(2.8rem + 2px) !important;
+    color: #999;
+    background-color: #f2f2f2;
+    box-shadow: none;
+    border-radius: 6px;
+     -webkit-border-radius: 6px;
+     margin: .6rem;
+     border-right: 2px solid #FFF;
+     padding: 4px 6px;
+}
 
+.wrn-btn a,.wrn-btn:hover,.wrn-btn:focus,.wrn-btn:active{
+    color: #FFF;
+    box-shadow: none;
+    border-radius: 4px;
+     -webkit-border-radius: 4px;
+    background-color: #9C27B0;
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+    outline: 0;
+}
+
+.wrn-btn:hover,.wrn-btn:focus{
+    color: #FFF!important;
+}
+
+.search-sec form{
+    width: 100%!important;
+}
+@media (min-width: 992px){
+    .search-sec{
+        position: relative;
+  }
+}
+@media (max-width: 410px){
+    .search-sec{
+        position: relative;
+        width: 320px;
+        min-width: 320px;
+        margin: auto;
+    }
+}
     </style>
 </head>
 <body>
@@ -1034,7 +1102,7 @@
     <!-- page container -->
     <div class="py-2">
         <!-- page row -->
-        <div class="container-fluid m-auto">
+        <div class="container-fluid m-auto pb-3">
             <!-- ticket list -->
             <!-- Table with panel -->
             <div class="card card-cascade narrower">
@@ -1050,61 +1118,57 @@
                   </div>
                 </div>
                 <!--end Card titlebar-->
-                <div class="container-fluid pb-3">
-                    <div class="row col-sm-auto mx-auto d-flex justify-content-center align-content-between my-3">
-
-                        <!-- button group -->
-                        <div id="filiter" class="btn-group mb-1 mx-1" role="group" aria-label="">
-                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                <div class="btn-group" role="group">
-                                <button id="btnGroupFiliter1" type="button" class="btn btn-outline-secondary btn-rounded w-46 z-depth-0 waves-effect waves-light dropdown-toggle" data-toggle="dropdown"
-                                  aria-haspopup="true" aria-expanded="false">選活動
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                  <a class="dropdown-item" href="#">活動 link</a>
-                                  <a class="dropdown-item" href="#">活動 link</a>
+                <div class="container-fluid py-3">
+                <div class="row m-auto justify-content-center align-content-between py-3">
+                <!-- search area -->
+                <section class="search-sec">
+                <div class="container">
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-7 pb-3">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-1">
+                                        <select class="form-control search-slt" id="FormControlSelect1">
+                                            <option>選活動</option>
+                                            <option>活動一link活動一link</option>
+                                            <option>活動一link</option>
+                                            <option>活動一link</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1">
+                                        <select class="form-control search-slt" id="FormControlSelect2">
+                                            <option>選場次</option>
+                                            <option>場次</option>
+                                            <option>場次一link</option>
+                                            <option>場次一link場次一link</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 btn-group btn-sm" role="group">
+                                        <button type="button" class="btn btn-sm text-center text-center text-secondary wrn-btn text-nowrap waves-effect waves-light px-2" data-toggle="modal" data-target="#addticketModalForm">新增</button>
+                                        <button type="button" class="btn btn-sm text-center text-secondary wrn-btn text-nowrap waves-effect waves-light px-2" data-toggle="modal" data-target="#copyTicketModalForm">複製</button>
+                                        <button type="button" class="btn btn-sm text-center text-secondary wrn-btn text-nowrap waves-effect waves-light px-2">刪除</button>
                                 </div>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="btnGroupFiliter2" type="button" class="btn btn-outline-secondary w-46 btn-rounded z-depth-0 waves-effect waves-light dropdown-toggle" data-toggle="dropdown"
-                                  aria-haspopup="true" aria-expanded="false">
-                                  選場次
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                  <a class="dropdown-item" href="#">場次 link</a>
-                                  <a class="dropdown-item" href="#">場次 link</a>
                                 </div>
-                              </div>
-
-                                  <!-- button of '新增票券+複製票券 -->
-                              <div class="btn-group" role="group">
-                                <button id="btnGroupAdd" type="button" class="btn btn-outline-secondary btn-rounded z-depth-0 dropdown-toggle text-nowrap" data-toggle="dropdown"
-                                  aria-haspopup="true" aria-expanded="false">
-                                  <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                  <a class="dropdown-item" data-toggle="modal" data-target="#addticketModalForm">新增票</a>
-                                  <a class="dropdown-item" data-toggle="modal" data-target="#copyTicketModalForm">複製票</a>
-                                </div>
-                              </div>
-                         <!-- ./button of '新增票券+複製票券 -->
-                              </div>
-
                             </div>
-                         <!-- button group -->
-
-                    <!-- button of '上架+下架‘ -->
-                    <div class="d-flex justify-content-end btn-group btn-sm mb-1 mx-1 "role="group" aria-label="">
-                      <button type="button" class="btn btn-primary btn-rounded z-depth-1 waves-effect waves-light text-nowrap px-4" data-target=""><i class="fab fa-lg fa-telegram-plane mr-1" aria-hidden="true"></i>上架
+                            <div class="col-lg-5 mb-1 justify-content-lg-end col-xs-12">
+                                <!-- button of '上架+下架‘ -->
+                    <div class="container d-flex justify-content-lg-end justify-content-center btn-group btn-sm text-center mt-1 pb-2"role="group" aria-label="">
+                      <button type="button" class="btn btn-primary btn-rounded z-depth-1 waves-effect waves-light text-nowrap px-3" data-target=""><i class="fab fa-lg fa-telegram-plane p-1 mr-1" aria-hidden="true"></i>上架
                       </button>
-                      <button type="button" class="btn btn-grey btn-rounded z-depth-1 waves-effect waves-light text-nowrap px-4"  data-target=""><i class="fa fa-times fa-lg mr-1" aria-hidden="true"></i>清票上架
+                      <button type="button" class="btn btn-primary btn-rounded z-depth-1 waves-effect  text-nowrap waves-light px-3"  data-target="">清票上架
                       </button>
-                      <button type="button" class="btn btn-grey btn-rounded z-depth-1 waves-effect waves-light text-nowrap px-4"  data-target=""><i class="fa fa-times fa-lg mr-1" aria-hidden="true"></i>下架
+                      <button type="button" class="btn btn-grey btn-rounded z-depth-1 waves-effect wa px-2ves-light text-nowrap px-3"  data-target=""><i class="fa fa-times fa-lg p-1 mr-1" aria-hidden="true"></i>下架
                       </button>
                   </div>
-
+                   <!-- end row of 'buttons' -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </section>
+                <!-- ./ search area -->
                     </div>
-                    <!-- end row of 'buttons' -->
                     <!--table--> 
                     <div class="table-wapper text-nowrap">
                     <table id="ticketlist" class="table table-hover mb-0 table-responsive">
@@ -1112,10 +1176,6 @@
                       <thead class="deep-purple lighten-5">
                         <tr>
                           <th class="fixed">
-                           <!--  <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="tableMaterialCheck1">
-                            <label class="form-check-label" for="tableMaterialCheck1"></label>
-                            </div> -->
                           </th>
                           <th class="th-lg" style="width: 20%">
                               <a>活動</a>
